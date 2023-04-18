@@ -1,0 +1,278 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdrv.app.dao.QuestionDao">
+
+<!-- keywordを元に該当する質問リストを取得(画像なし)。(タイトルとページ番号で昇順)-->
+	<select id="selectByKeyword" parameterType="string" resultType="com.zdrv.app.domain.Question">
+		SELECT * FROM question
+		WHERE book_title LIKE "%${keyword}%"
+		ORDER BY book_title, page_number
+	</select>
+
+<!-- questionIdを元に1つの質問(+画像)を取得 -->
+ 	<resultMap id="selectQuestionByIdMap" type="com.zdrv.app.domain.Question" >
+		<id property="questionId" column="question_id"/>
+		<result property="bookTitle" column="book_title"/>
+		<result property="pageNumber" column="page_number"/>
+		<result property="questionTitle" column="question_title"/>
+		<result property="questionContents" column="question_contents"/>
+		<result property="questionDate" column="question_date"/>
+		<result property="questionUserId" column="question_user_id"/>
+		<result property="questionStatus" column="question_status"/>
+		<result property="questionThanks" column="question_thanks"/>
+		<result property="pageViews" column="page_views"/>
+		<collection property="questionImgList" ofType="com.zdrv.app.domain.QuestionImg">
+			<id property="questionImgNo" column="question_img_no"/>
+			<result property="questionImgName" column="question_img_name"/>
+			<result property="questionImgQuestionId" column="question_img_question_id"/>
+		</collection>
+	</resultMap>
+	<select id="selectQuestionById" parameterType="int" resultMap="selectQuestionByIdMap">
+		SELECT * FROM question
+		LEFT JOIN question_img ON question.question_id = question_img.question_img_question_id
+		WHERE question.question_id = #{questionId}
+	</select>
+
+<!-- questionIdを元に1つの質問(+画像)+回答リスト(+画像)+コメントリスト(+画像)を取得-->
+ 	<resultMap id="selectQuestionByIdWithACMap" type="com.zdrv.app.domain.Question" >
+		<id property="questionId" column="question_id"/>
+		<result property="bookTitle" column="book_title"/>
+		<result property="pageNumber" column="page_number"/>
+		<result property="questionTitle" column="question_title"/>
+		<result property="questionContents" column="question_contents"/>
+		<result property="questionDate" column="question_date"/>
+		<result property="questionUserId" column="question_user_id"/>
+		<result property="questionStatus" column="question_status"/>
+		<result property="questionThanks" column="question_thanks"/>
+		<result property="pageViews" column="page_views"/>
+		<collection property="questionImgList" ofType="com.zdrv.app.domain.QuestionImg">
+			<id property="questionImgNo" column="question_img_no"/>
+			<result property="questionImgName" column="question_img_name"/>
+			<result property="questionImgQuestionId" column="question_img_question_id"/>
+		</collection>
+		<collection property="questionAnswerList" ofType="com.zdrv.app.domain.Answer">
+			<id property="answerId" column="answer_id"/>
+			<result property="answerContents" column="answer_contents"/>
+			<result property="answerDate" column="answer_date"/>
+			<result property="answerQuestionId" column="answer_question_id"/>
+			<result property="answerUserId" column="answer_user_id"/>
+			<collection property="answerImgList" ofType="com.zdrv.app.domain.AnswerImg">
+				<id property="answerImgNo" column="answer_img_no"/>
+				<result property="answerImgName" column="answer_img_name"/>
+				<result property="answerImgAnswerId" column="answer_img_answer_id"/>
+			</collection>
+			<collection property="answerCommentList" ofType="com.zdrv.app.domain.Comment">
+				<id property="commentId" column="comment_id"/>
+				<result property="commentContents" column="comment_contents"/>
+				<result property="commentDate" column="comment_date"/>
+				<result property="commentAnswerId" column="comment_answer_id"/>
+				<result property="commentUserId" column="comment_user_id"/>
+				<result property="commentPosterType" column="comment_poster_type"/>
+				<collection property="commentImgList" ofType="com.zdrv.app.domain.CommentImg">
+					<id property="commentImgNo" column="comment_img_no"/>
+					<result property="commentImgName" column="comment_img_name"/>
+					<result property="commentImgCommentId" column="comment_img_comment_id"/>
+				</collection>
+			</collection>
+		</collection>
+	</resultMap>
+	<select id="selectQuestionByIdWithAC" parameterType="int" resultMap="selectQuestionByIdWithACMap">
+		SELECT * FROM question
+		LEFT JOIN question_img ON question.question_id = question_img.question_img_question_id
+		LEFT JOIN answer ON question.question_id = answer.answer_question_id
+		LEFT JOIN answer_img ON answer.answer_id = answer_img.answer_img_answer_id
+		LEFT JOIN comment ON answer.answer_id = comment.comment_answer_id
+		LEFT JOIN comment_img ON comment.comment_id = comment_img.comment_img_comment_id
+		WHERE question.question_id = #{questionId}
+		ORDER BY comment_date ASC
+	</select>
+
+
+<!-- IDの自動採番と取得 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="questionId" parameterType="com.zdrv.app.domain.Question">
+		INSERT INTO question (book_title, page_number, question_title, question_contents, question_date, question_user_id)
+		VALUES (#{bookTitle}, #{pageNumber}, #{questionTitle}, #{questionContents}, NOW(), #{questionUserId})
+		<!-- 自動採番されたIDの取得 -->
+    	<selectKey resultType="int" keyProperty="questionId" order="AFTER">
+       	 	select @@IDENTITY
+    	</selectKey>
+	</insert>
+
+
+<!-- 質問の解決・未解決情報をQuestionのquestionStatusに入れて更新する -->
+	<update id="updateStatus" parameterType="com.zdrv.app.domain.Question">
+		UPDATE question SET
+		question_status = #{questionStatus}
+		WHERE question_id = #{questionId}
+	</update>
+
+<!-- ありがとうをQuestionのquestionThanksに入れて更新する-->
+	<update id="updateQuestionThanks" parameterType="com.zdrv.app.domain.Question">
+		UPDATE question SET
+		question_thanks = #{questionThanks}
+		WHERE question_id = #{questionId}
+	</update>
+
+<!-- 閲覧数を更新する-->
+	<update id="updatePageViews" parameterType="com.zdrv.app.domain.Question">
+		UPDATE question SET
+		page_views = #{pageViews}
+		WHERE question_id = #{questionId}
+	</update>
+
+<!-- 画像添付用(ファイル名等を追加))-->
+	<insert id="insertQuestionImg" useGeneratedKeys="true" keyProperty="questionImgNo" parameterType="com.zdrv.app.domain.QuestionImg">
+		INSERT INTO question_img (question_img_no, question_img_name, question_img_question_id)
+		VALUES (#{questionImgNo}, #{questionImgName}, #{questionImgQuestionId})
+	</insert>
+
+
+<!--マイページの質問履歴用(ページネーション)-->
+    <!-- ログイン中のユーザーID情報を元に質問履歴をリストで取得 -->
+    <resultMap id="selectQuestionHistoryByPageMap" type="com.zdrv.app.domain.Question" >
+		<id property="questionId" column="question_id"/>
+		<result property="bookTitle" column="book_title"/>
+		<result property="pageNumber" column="page_number"/>
+		<result property="questionTitle" column="question_title"/>
+		<result property="questionContents" column="question_contents"/>
+		<result property="questionDate" column="question_date"/>
+		<result property="questionUserId" column="question_user_id"/>
+		<result property="numberOfAnswers" column="number_of_answers"/>
+		<result property="questionStatus" column="question_status"/>
+		<result property="questionThanks" column="question_thanks"/>
+		<result property="pageViews" column="page_views"/>
+		<collection property="questionAnswerList" ofType="com.zdrv.app.domain.Answer">
+			<id property="answerId" column="answer_id"/>
+			<result property="answerContents" column="answer_contents"/>
+			<result property="answerDate" column="answer_date"/>
+			<result property="answerQuestionId" column="answer_question_id"/>
+			<result property="answerUserId" column="answer_user_id"/>
+		</collection>
+	</resultMap>
+	<select id="selectQuestionHistoryByPage" resultMap="selectQuestionHistoryByPageMap">
+		SELECT
+		question_id,
+        book_title,
+        page_number,
+        question_title,
+        question_contents,
+        question_date,
+        question_user_id,
+        question_status,
+        question_thanks,
+        page_views,
+        COUNT(answer.answer_question_id) AS number_of_answers
+		FROM question
+		LEFT JOIN answer ON question.question_id = answer.answer_question_id
+		WHERE question_user_id = #{questionUserId}
+		GROUP BY question_id
+		ORDER BY question_date DESC
+		LIMIT #{offset}, #{num}
+	</select>
+
+    <!-- 質問履歴の全件数を取得(トータルページ数用)-->
+	<select id="countQuestionHistory" resultType="long">
+		SELECT COUNT(*) FROM question
+		WHERE question_user_id = #{questionUserId}
+	</select>
+
+    <!-- ユーザーidを元に質問履歴の全タイトルを取得(トータル件数用)-->
+	<select id="selectAllQuestionHistory" resultType="com.zdrv.app.domain.Question">
+		SELECT * FROM question
+		WHERE question_user_id = #{questionUserId}
+	</select>
+
+
+
+<!--質問一覧用(ページネーション)-->
+    <!-- ページごとの質問と回答数を取得、keywordがなければ全取得 (offset番目のデータからnum番目までのデータを取得)-->
+ 	<resultMap id="selectQuestionListByPageMap" type="com.zdrv.app.domain.Question" >
+		<id property="questionId" column="question_id"/>
+		<result property="bookTitle" column="book_title"/>
+		<result property="pageNumber" column="page_number"/>
+		<result property="questionTitle" column="question_title"/>
+		<result property="questionContents" column="question_contents"/>
+		<result property="questionDate" column="question_date"/>
+		<result property="questionUserId" column="question_user_id"/>
+		<result property="numberOfAnswers" column="number_of_answers"/>
+		<result property="questionStatus" column="question_status"/>
+		<result property="questionThanks" column="question_thanks"/>
+		<result property="pageViews" column="page_views"/>
+		<collection property="questionAnswerList" ofType="com.zdrv.app.domain.Answer">
+			<id property="answerId" column="answer_id"/>
+			<result property="answerContents" column="answer_contents"/>
+			<result property="answerDate" column="answer_date"/>
+			<result property="answerQuestionId" column="answer_question_id"/>
+			<result property="answerUserId" column="answer_user_id"/>
+		</collection>
+	</resultMap>
+
+	<select id="selectQuestionListByPage" resultMap="selectQuestionListByPageMap">
+		SELECT
+        question_id,
+        book_title,
+        page_number,
+        question_title,
+        question_contents,
+        question_date,
+        question_user_id,
+        question_status,
+        question_thanks,
+        page_views,
+        COUNT(answer.answer_question_id) AS number_of_answers
+		FROM question
+		LEFT JOIN answer ON question.question_id = answer.answer_question_id
+		WHERE book_title LIKE "%${keyword}%"
+		GROUP BY question_id
+		ORDER BY book_title, page_number
+		LIMIT #{offset}, #{num}
+	</select>
+
+
+	<!-- データの全件数を取得 (質問のトータルページ数を出すメソッド内で使用) (キーワードがnullの場合全検索)-->
+	<select id="countQuestions" resultType="long">
+		SELECT COUNT(*) FROM question
+		WHERE book_title LIKE "%${keyword}%"
+	</select>
+
+
+<!--教材タイトル一覧用(ページネーション)-->
+    <!-- キーワードありで、ページごとの教材タイトルをグループ化して(重複なし)質問を取得。その件数もnumberOfQuestionsへ取得 -->
+	<select id="selectGroupedBookTitleAndSubCount2" resultType="com.zdrv.app.domain.Question">
+		SELECT book_title, COUNT(*) AS number_of_questions
+		FROM question
+		WHERE book_title LIKE "%${keyword}%"
+		GROUP BY book_title
+		ORDER BY book_title
+		LIMIT #{offset}, #{num}
+	</select>
+
+    <!-- キーワードありで、教材タイトルをグループ化した(重複なし)質問の全件数を取得 (教材タイトルのトータルページ数を出すメソッド内で使用) (キーワードがnullの場合全検索)-->
+	<select id="countGroupedBookTitleByKeyword" resultType="long">
+		SELECT COUNT(DISTINCT book_title) FROM question
+		WHERE book_title LIKE "%${keyword}%"
+		ORDER BY book_title
+	</select>
+
+    <!-- キーワードありで、教材タイトルをグループ化した(重複なし)全タイトルを取得 (教材タイトルのトータル件数を出すメソッド内で使用) (キーワードがnullの場合全検索)-->
+	<select id="selectAllGroupedBookTitleByKeyword" parameterType="string" resultType="com.zdrv.app.domain.Question">
+		SELECT book_title FROM question
+		WHERE book_title LIKE "%${keyword}%"
+		GROUP BY book_title
+		ORDER BY book_title
+	</select>
+
+
+<!-- questionIdを元に質問+回答+コメント+画像情報も削除 -->
+	<delete id="deleteQuestionByIdWithAC" parameterType="int" >
+	DELETE question,question_img,answer,answer_img,comment,comment_img FROM question
+	LEFT JOIN question_img ON question.question_id = question_img.question_img_question_id
+	LEFT JOIN answer ON question.question_id = answer.answer_question_id
+	LEFT JOIN answer_img ON answer.answer_id = answer_img.answer_img_answer_id
+	LEFT JOIN comment ON answer.answer_id = comment.comment_answer_id
+	LEFT JOIN comment_img ON comment.comment_id = comment_img.comment_img_comment_id
+	WHERE question.question_id = #{questionId}
+	</delete>
+
+
+</mapper>

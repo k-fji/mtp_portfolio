@@ -1,0 +1,5898 @@
+@charset "utf-8";
+
+/* 全16P*/
+/* home.html トップページ(ホーム)↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+.logo { /*ロゴ  */
+	margin-top: 10px;
+	width: 505px; /*width: 34%;  */
+	height: auto;
+}
+
+/*●一部共通 home,login,register,favorite_edit,message,sample_mypage等  */
+.body_color_blue {
+	background-color: rgb(118, 207, 255); /*基本背景色(パステルブルー)*/
+}
+
+/*●全共通 */
+header {
+	height: 45px;
+	text-align: right; /*右寄せ */
+	padding-top: 10px;
+}
+
+/*●一部共通 home,login,register,favorite_edit,message,sample_mypage等  */
+/* ヘッダー内ナビゲーターリストの色(Bootstrapなしの時の色) #551A8B; */
+.home--body header a {
+	color: rgb(85, 26, 139); /*文字色調整 */
+}
+
+/*●全共通 */
+header p {
+	font-size: 16px;
+	color: black;
+	display: inline;
+	vertical-align: middle;
+	position: relative;
+	bottom: 3px;
+	margin-right: 7px
+}
+
+.home--message{
+	font-size: 18px;
+	position:relative;
+	top:-6px;
+}
+
+/*●一部共通 home,login */
+.mypage_sumple{
+	font-size: 14px;
+}
+
+.post_question {
+	font-size: 15px;
+}
+
+.book_title_list {
+	font-size: 15px;
+}
+
+.QandA_list {
+	font-size: 15px;
+}
+
+/*●一部共通 home,login */
+.new_registration{
+	font-size: 15px;
+}
+
+/*ログアウト  */
+.logout {
+  text-shadow:1px 0 0 #fff, 0 1px 0 #fff,-1px 0 0 #fff,0 -1px 0 #fff;/* (右に1、上に1、左に1、下に1px) */
+    color: blue;
+    margin-left: -10px;
+}
+
+/*●共通 */
+.show_userId {
+	display:inline-block;
+	position:relative;
+	bottom:1px;
+	text-align: center;
+	line-height: 15px;
+	margin:0px 15px 0px 0px;
+	border-bottom: solid 1px blue;
+}
+
+.home--body .show_userId {
+	border-bottom: solid 0.9px white;
+}
+
+/*●共通 ○○でログイン中 + マイページTOPへ*/
+.show_userId a {
+  text-shadow:1px 0 0 #fff, 0 1px 0 #fff,-1px 0 0 #fff,0 -1px 0 #fff;/* (右に1、上に1、左に1、下に1px) */
+  color: blue;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+/*●共通 ○○でログイン中 */
+.show_userId-span_Top {
+	display:block;
+	font-size: 15px;
+}
+/*●共通 マイページTOPへ */
+.show_userId-span_Bottom {
+	display:block;
+	font-size: 15px;
+	margin-bottom:-15px;
+}
+
+/*●共通 home,details,mypage,login,add,  */
+.center{
+	text-align: center;	/*ボックス内を中央揃え  */
+}
+
+/*●一部共通 home, login, message, mypageサンプル  */
+/* .header_hr_white {
+   	background-color:white;
+   	border: none;
+	height: 0.8px;
+	width: 100%;
+} */
+
+/*●一部共通 home, login, message, mypageサンプル  */
+.header_bottomLine_white {
+	border-bottom: 1px solid white;
+}
+
+/* home用検索BOX↓---------------------------------------------- */
+
+.searchArea{
+  width          : 290px;              /* BOXの幅               */
+  height         : 24px;               /* BOXの高さ             */
+  margin         : auto;               /* サンプルを中心に寄せ  */
+  margin-top     : 10px;
+  letter-spacing : 0.1em;              /* 文字間隔              */
+  font-weight    : bold;               /* 太字                  */
+  line-height    : 0;                  /* 標準の行高さ          */
+}
+
+ /* --- テキスト入力欄のSTYLE設定 --- */
+.searchArea .searchText {
+  display        : block;              /* ブロック化            */
+  float          : left;               /* 横並び                */
+  box-sizing     : border-box;         /* 枠線,余白を含んだ長さ */
+  height         : 30px;               /* 入力の高さ            */
+  width          : 240px;              /* 入力の幅170→240      */
+  margin         : 0;                  /* 外余白                */
+  padding        : 0 12px;             /* 内余白                */
+  border         : 2px solid #007fff;  /* 枠線　幅,実践,色      */
+  border-radius  : 12px 0 0 12px;      /* 左上下の角丸          */
+  color          : #333;               /* 文字色                */
+  outline        : 0;                  /* 入力の薄い枠を非表示  */
+  font-size      : 12px;               /* フォントサイズ        */
+}
+
+ /* --- 検索ボタン欄のSTYLE設定 --- */
+.searchButton {
+  float          : left;               /* 横並び                */
+  box-sizing     : border-box;         /* 枠線,余白を含んだ長さ */
+  height         : 30px;               /* 入力の高さ            */
+  margin         : 0;                  /* 外余白                */
+  padding        : 6px 10px;           /* 内余白                */
+  border         : none;               /* 枠線　幅,実践,色      */
+  border-radius  : 0 12px 12px 0;      /* 右上下の角丸          */
+  background     : #007fff;            /* ボタンの色            */
+  color          : #fff;               /* 文字色                */
+  cursor         : pointer;            /* カーソル設定          */
+  line-height    : 12px;               /* 1行の高さ */
+  font-size      : 13px;               /* フォントサイズ        */
+}
+
+ /* --- 検索ボタン欄にフォーカスが来たとき --- */
+.searchArea .searchText:focus {
+  background     : #cfe7ff;       /* フォーカス時の背景色 */
+}
+
+ /* --- IEの入力エリア右側×消し ---*/
+.searchArea .searchText::-ms-clear {
+  display        : none;               /* ×を消す */
+}
+/* home用検索BOX↑---------------------------------------------- */
+
+/*注意*/
+.home--caution,.home--how_to_use {
+  background-color:rgba(255,255,255,0.9);
+  border: 7px double rgb(118, 207, 255);   /*背景色と同じ  */
+  border-radius: 12px;
+}
+
+
+.home--caution {
+  display: block;
+  width: 730px;
+  height: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 16px; 	/* 注意と検索ボックスの間 */
+  margin-bottom:  10px;	/* 注意と使い方の間 */
+  font-size: 13px;
+  padding-top: 5px;
+}
+.home--caution p{
+  margin-bottom: 3px;
+}
+/*使い方*/
+.home--how_to_use {
+  border-collapse: separate;
+  border: 7px double rgb(118, 207, 255);
+  border-radius : 12px 12px 12px 12px;
+  text-align:center;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 10pt;
+  width: 380px;
+}
+
+.home--how_to_use tr {
+  height: 10px;
+}
+.home--body footer p {
+	text-align: center;
+	font-size: 11px;
+	color: rgb(85, 26, 139);
+	color: white;
+	margin-top: 5px;
+}
+
+
+/*●共通PCレスポンシブ用:スマホ専用表示をPC画面で非表示↓-----------------*/
+/*(home, booktitle_list,)  */
+.sp-nav {
+  display: none;    /* ドロワーメニュー*/
+}
+
+.sp-nav_bg {
+  display: none;    /* 半透明背景   */
+}
+
+.sp_br {
+  display: none;   /* スマホ用改行  */
+}
+
+.sp-show_userId {
+  display: none;  /* スマホ用ユーザー名表示を非表示*/
+}
+
+.sp-no_login {
+  display: none;  /* スマホ用[未ログイン]表示を非表示*/
+}
+/*共通PCレスポンシブ用:スマホ専用表示をPC画面で非表示↑-----------------*/
+
+/* homeレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) { /*520or960 */
+	.pc-nav {
+		display: none; /*pc用ナビゲーションを非表示  */
+	}
+
+	.sp-userId_and_hamburger { /*ヘッダー横一杯のボックスに該当  */
+		display: flex; /*デフォルト左寄せ  */
+		width: 100%;
+	}
+
+	.sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: white;
+		position: relative;
+		bottom: -3px;
+	}
+
+	.sp-no_login { /*未ログイン  */
+		display: block; /* 非表示から上書きして表示 */
+		margin: 0 0 0 10px;
+		font-size: 12px;
+		color: rgb(85, 26, 139);
+		position: relative;
+		bottom: -3px;
+	}
+
+/* ハンバーガー↓..........................*/
+	#hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;/*ハンバーガーを右寄せ  */
+	}
+	#hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+		transform: translateY(-50%);
+	}
+	#hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+	}
+	#hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #fff;
+	}
+/* ハンバーガー↑..........................*/
+
+/* ドロワーメニュー↓================================================= */
+	.sp-nav_wrapper {
+		position: relative;
+		z-index: 1; /*階層調整  */
+		top: 0;
+		left: 0;
+	}
+
+	.sp-nav_bg { /*半透明背景  */
+		z-index: 2;
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100vh;
+		display: none;
+		background: rgba(50, 50, 50, 0.4); /*  黒 */
+		/*   background: rgba(255,255,255, 0.6);*/
+		/* transition: all 0.5s ease-in-out; */ /* スライドスピード0.3秒 加速してから減速 */
+		/* opacity: 0;  */ /* 右にずれる時透明になる  */
+		/* transform: translateX(100%);    100%分右にずらす        */
+	}
+
+	.sp-nav {
+		z-index: 10; /*要素を重ねる。前面に表示  */
+		position: fixed;
+		/*   position: absolute; */
+		top: 0;
+		left: 15%;
+		width: 85%;
+		border-left: 3.5px solid #fff; /*線の設定*/
+		/*  border-left: 3.5px solid rgba(85, 26, 139);*/
+		height: 100vh;
+		display: block;
+		background: rgba(118, 207, 255);
+		transition: all .3s ease-in-out; /* スライドスピード0.3秒  */
+		/* opacity: 0; */ /* 右にずれる時透明になる  */
+		transform: translateX(100%); /* 100%分右にずらす        */
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない
+    .home--body .sp-nav a {
+       color: white;
+    }*/
+	.home--body .portfolio--body .to_home a {
+	color: white;
+	font-weight: 500;
+}
+/* 丸バツアイコン↓..........................*/
+	.round_btn { /*バツ印「○」*/
+		margin: 9px 14px 0px auto;
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #fff; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: rgb(118, 207, 255); /* ボタンの背景色 */
+	}
+	.round_btn::before, .round_btn::after { /*バツ印共通設定*/
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: white; /* バツ印の色 */
+	}
+
+	.round_btn::before { /*バツ印「＼」*/
+		transform: translate(-50%, -50%) rotate(45deg);
+	}
+
+	.round_btn::after { /*バツ印「／」*/
+		transform: translate(-50%, -50%) rotate(-45deg);
+	}
+/* 丸バツアイコン↑..........................*/
+
+/* 検索フォーム↓........................................*/
+	.home--body .searchForm_onSite { /*検索フォーム(formタグ)  */
+		display: inline-block;
+		/* margin-bottom: 50px; */
+		position: relative; /*追加 */
+	}
+
+	.home--body .searchForm_onSite-input {  /*検索ボックス  booktitle_listと統一可*/
+		width: 290px; /*booktitle_listと同じ */
+		height: 38px; /*booktitle_listと同じ */
+		border: 2.5px solid #007bff; /*検索ボックスの枠線・色  */
+		border-radius: 6px;
+		/*background-color: #fcf9ff; #f7f7f7; */
+	}
+	.home--body .searchForm_onSite-button { /*虫めがねアイコン  */
+		width: auto;
+		height: 29px;
+		padding: 0 0 0 0;
+		border: 1.5px solid;
+		border-radius: 6px;
+		font-size: 15px;
+		position: absolute;
+		left: 255px; /*アイコン左右の位置調整*/
+		bottom: 7px;
+		background: none;
+		color: #007bff; /*虫めがねの色  */
+		border: none;
+		font-size: 25px; /*アイコンサイズ*/
+	}
+/* 検索フォーム↑........................................*/
+
+/* リストメニュー↓......................................*/
+	.sp-nav ul {
+		padding: 0;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		height: 90%; /*100%だとulの範囲で縦いっぱいになる  */
+	}
+	.sp-nav li {
+		list-style: none; /*リストの頭の●を非表示 */
+		margin: 0;
+		padding: 0;
+	}
+	.sp-nav li span {
+		font-size: 15px;
+		color: #fff;
+	}
+	.sp-nav li a, .sp-nav li span {
+		display: block;
+		padding: 20px 0; /*リストの間隔*/
+	}
+	.sp-nav li a span {
+		display: block;
+		padding: 0px 0; /*リストの間隔*/
+	}
+	li.to_mypage_sample a {
+		padding-bottom: 0px;
+	}
+	.recommend1 { /*▲　▲　▲  */
+		color: white;
+		font-size: 12px;
+	}
+	.recommend2 { /*お気に入り登録もできる!!  */
+		color: white;
+		font-size: 16px;
+	}
+
+	li.portfolio a { /*portfolioリンク  */
+	font-size: 18px;
+	color: blue;
+	font-weight: 700;
+	text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+               -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+               0px 1px 0 #FFF,  0-1px 0 #FFF,
+               -1px 0 0 #FFF, 1px 0 0 #FFF;
+	}
+/* リストメニュー↑......................................*/
+
+	.toggle { /*jQueryでhamburgerまたはバツボタンをクリックで.sp-navに対してCSSをトグルでON/OFFする  */
+		transform: translateY(0);
+		opacity: 1;
+		display: block;
+	}
+/* ドロワーメニュー↑================================================= */
+
+	.logo { /*ロゴ(画像)  */
+		margin-top: 20px;
+		margin-bottom: 5px;
+		max-width: 100%;
+	}
+
+	.sp_br { /*「注意」スマホ用改行  */
+		display: block;
+	}
+	.sp_br_size {
+		font-size: 5px;
+	}
+	.home--caution {
+		width: 100%;
+		height: 100%;
+		margin: 0 auto;
+		font-size: 55%;
+		/* vertical-align: middle; */
+		padding-top: 5px;
+		margin-top: 16px; /* 注意と検索ボックスの間 */
+		margin-bottom: 9px; /* 注意と使い方の間 */
+	}
+	.home--caution-space {
+		margin-top: 10px; /* 注意の文章間のスペース空け */
+	}
+
+/*使い方*/
+	.home--how_to_use {
+	   border-collapse: separate;
+	   /*border:1.5px solid #1e90ff;*/
+	   /* border: 5px double #7B68EE; */
+	   border: 7px double rgb(118, 207, 255);/*背景色と同じ  */
+	   border-radius : 12px;
+	   text-align:center;
+	   margin-left: auto;
+	   margin-right: auto;
+	   font-size: 60%;
+	   width: 100%;
+	}
+	.home--how_to_use tr {
+		height: 10px;
+	}
+
+}
+
+/* homeレスポンシブ↑---------------------------------------------- */
+/* home.html トップページ(ホーム)↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* message.html メッセージ↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+/*●一部共通 message,sample_mypage,register,register_done,login,booktitle_list,list,mypage(上書き) */
+.to_home {
+	font-size: 17px;
+	margin-right: 10px;
+}
+
+.message--body header a{
+	color: rgb(85, 26, 139);  /*ヘッダー文字色  */
+}
+
+body.message--body {
+	height: 100vh;
+}
+
+ .message--body main {
+	height: calc(100% - 45px); /* headerを共通で45px。mainの高さを100%から引いたものに設定。 */
+	display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.message--message {
+	color: white;
+	font-family: Meiryo;
+	font-size: 2.2vw;	/* font-size: 37px; */
+	font-weight: bold;
+}
+/* message.html メッセージ↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* portfolio.html ポートフォリオ↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+body.portfolio--body  {
+	box-sizing: border-box;/*全て含めてmin-height:100vhに*/
+    position: relative;/*相対位置*/
+    min-height: 100vh;
+    padding-bottom: 45px;
+}
+
+.portfolio--body header {
+	z-index: 10; /*階層調整  */
+	background-color: #eb6100;
+}
+
+.portfolio--body main {
+	z-index: 1; /*階層調整  */
+	width: 100%;
+}
+
+.portfolio--body p.to_home a {
+	color: white;
+	font-weight: 500;
+}
+
+p.portfolio a {
+	font-size: 18px;
+	color: blue;
+	margin-right: 5px;
+	font-weight: 500;
+	text-shadow:1px 1px 0 #FFF, -1px -1px 0 #FFF,
+              -1px 1px 0 #FFF, 1px -1px 0 #FFF,
+              0px 1px 0 #FFF,  0-1px 0 #FFF,
+              -1px 0 0 #FFF, 1px 0 0 #FFF;
+}
+
+h1.portfolio_title { /*教材タイトル一覧(ページタイトル)  */
+	/* margin-bottom: 10px; */
+	padding-top: 60px;
+	font-size: 30px;
+	font-weight: bold;
+	font-family: 'Meiryo', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial',
+		'ヒラギノ角ゴシック';
+	text-align: center;
+}
+.profile_More_wrapper {
+	width: 95%;
+	border: 0.3px solid black;
+	border-radius: 8px;
+	padding: 3px 0 5px 10px;
+}
+.bold {
+	font-weight: bold;
+}
+.red {
+	color: red;
+}
+.profile_wrapper {
+	text-align: center;
+	/* background-color: skyblue; */
+}
+
+.contents_wrapper div {
+	word-wrap: break-word;
+	/* background-color: orange; */
+}
+
+.profile_img {       /*プロフィール写真  */
+    margin-top: 5px;
+	width: 250px;	/*width: 34%;  */
+	height: auto;
+	box-shadow: 0 2px 8px 0 rgba(0, 0, 0, .1);
+
+}
+.profile_contents  {
+	margin-top: 5px;
+	margin-bottom: 15px;
+	word-wrap: break-word;
+	text-align: left;
+	/* font-size: 16px; 基本値*/
+}
+
+.profile_contents .portfolio_contents_title {
+    border-bottom: 4px solid black;
+    border-bottom-style: double;
+    width: 100%;
+}
+.contents_wrapper .portfolio_contents_title {
+    border-bottom: 2px solid black;
+    width: 100%;
+}
+div.portfolio_contents_title  {
+	font-weight: bold;
+}
+.contents_wrapper .contents1 {
+	margin-top: 10px;
+}
+.contents_wrapper .contents2 {
+	margin-top: 20px;
+}
+.contents_wrapper .contents_img_div {
+	margin-top: 20px;
+	/* text-align: center; */
+}
+.porfolio_img{ /*イメージ画像  */
+	width: 75%;
+	height: auto;
+}
+.QR_img {       /*QR帯イメージ  */
+	width: 45%;
+	height: auto;
+}
+.contents_wrapper .contents3 {
+	margin-top: 20px;
+}
+.contents_wrapper .contents4 {
+	margin-top: 20px;
+}
+
+.portfolio--body footer {
+    border-top: 0.8px solid black;
+	text-align: center;
+	font-size: 11px;
+	color: rgb(85, 26, 139);
+	color: white;
+	width: 100%;
+	line-height: 25px;
+	background-color: #eb6100;
+	position: absolute;   /*絶対位置*/
+    bottom: 0;           /*下に固定*/
+
+}
+
+/* portfolioレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) { /*520or960 */
+	.portfolio--body header {
+		height: 37px;
+		text-align: right; /*右寄せ */
+		padding-top: 9px;
+	}
+	.portfolio--body .sp-nav .to_home {
+		font-size: 19px;
+	}
+	.portfolio--body .portfolio_sidemenu_anotation {
+	font-size: 15px;
+	}
+	.profile_contentsl {
+		text-align: center;
+	}
+	.porfolio_img { /*イメージ画像  */
+	margin-top: 30px;
+	width: 100%;
+
+	}
+	.QR_img {       /*QR帯イメージ  */
+	width: 65%;
+	height: auto;
+	}
+
+/* ドロワーメニュー↓=========================================== */
+   .portfolio--body .sp-nav {
+	   background: rgba(255, 255, 255);
+	   font-size: 18px;
+	   font-weight: bold;
+   }
+
+/*文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+    .portfolio--body .sp-nav a {
+      /*  color: #333333; */ /*文字色の変更 */
+      color: #007bff;
+    }
+
+/* ハンバーガー↓..................................*/
+	.portfolio--body #hamburger {
+		width: 27px;
+		height: 20px;
+	}
+/* ハンバーガー↑..................................*/
+
+/* 丸バツアイコン↓..........................*/
+	.portfolio--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.portfolio--body .round_btn::before, .portfolio--body .round_btn::after
+		{
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+/* ドロワーメニュー↑=========================================== */}
+/* portfolioレスポンシブ↑---------------------------------------------- */
+/* portfolio.html ポートフォリオ↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* portfolio_works.html ポートフォリオ↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+.works_anotation {
+	text-align: center;
+	font-size: 14px;
+	/* font-weight: bold; */
+	margin: -5px 0 -15px 0;
+}
+.works_wrapper {
+	width: 90%;
+	margin: 0 auto;
+}
+.works_separator {
+	margin-top: 20px;
+}
+.portfolio_works_title {
+    border-bottom: 2px solid black;
+    width: 100%;
+    font-weight: bold;
+}
+.works_img { /*チラシ画像  */
+	width: 400px;
+	height: auto;
+}
+.works_img_uchiwa01 { /*うちわ画像1  */
+	width: 560px;
+	height: auto;
+}
+.works_img_uchiwa02 { /*うちわ画像2  */
+	width: 180px;
+	height: auto;
+}
+.works_img_nomukakigoori {  /*飲むかき氷画像  */
+width: 450px;
+height: auto;
+}
+.works_img_room03 {  /*ルーム3画像  */
+width: 250px;
+height: auto;
+}
+.works_img_room04 {  /*ルーム4画像  */
+width: 450px;
+height: auto;
+}
+/* portfolio_worksレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {  /*520or960 */
+	.works_img { /*チラシ画像  */
+		width: 92%;
+	}
+	.works_img_room03 { /*チラシ画像  */
+		width: 65%;
+	}
+	.works_img_uchiwa01 { /*うちわ画像1  */
+		width: 95%;
+	}
+	.works_img_uchiwa02 { /*うちわ画像2  */
+		width: 40%;
+	}
+	.works_img_nomukakigoori { /*飲むかき氷画像  */
+		width: 95%;
+	}
+	.works_img_room03 { /*ルーム3画像  */
+		width: 55%;
+	}
+	.works_img_room04 { /*ルーム4画像  */
+		width: 100%;
+	}
+}
+/* portfolio_worksレスポンシブ↑---------------------------------------------- */
+
+/* portfolio_works.html ポートフォリオ↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* sample_mypage.html ※マイページのサンプルを見てみる↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+.sample_mypage--body header {
+	background-color: rgb(118, 207, 255); /*基本背景色(パステルブルー)*/
+	/* position: absolute;
+	top: 0px */;
+}
+
+.sample_mypage--body header a {
+	color: rgb(85, 26, 139); /*ヘッダー文字色  */
+}
+.sample_mypage--body h1{  /*PC画面サンプル、スマートフォン画面サンプル  タイトル文字  */
+	padding-top: 40px;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	font-family: 'Meiryo', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial','ヒラギノ角ゴシック';
+	font-size: 37px;
+	font-weight: bold;
+	color: white;
+}
+
+.sample_mypage--body main {
+	padding-top: 10px; /*ヘッダー上隙間埋め  */
+}
+.sample_mypage--body main p {
+	margin-bottom: 0px;
+	font-size: 19px;
+}
+
+ .sample_mypage--body main p.caption {
+	 font-size: 15px;
+	 color: white;
+ }
+
+.sample_mypage--body img {
+	border-radius: 15px; /*角丸 */
+	width: 80%;		 /* width: 34%; */
+	height: "auto";
+	margin-bottom: 20px;
+}
+img.pc {
+	border-radius: 5px; /*角丸 */
+	border: 2px solid rgb(85, 26, 139);
+	width: 65vw;
+	height: auto;
+}
+
+div.sp-group_box {
+	display: flex;
+	/* flex-direction: row; */
+	justify-content: flex-start;
+	justify-content: space-around;
+}
+img.sp {
+	border: 2px solid rgb(85, 26, 139);
+	width: auto;
+	height: 45vh;
+}
+/* img.mypage_sample_pcMypageEdit {
+	border: 1px solid white;
+} */
+
+
+
+/* sample_mypageレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.sample_mypage--body h1{
+		 margin-top: 10px;
+		 margin-bottom: 10px;
+		 font-size: 21px;
+		 font-weight: 600;
+	}
+	 p.caption {
+		 font-size: 10px;
+ 	}
+	img.pc {
+		border-radius: 5px; /*角丸 */
+		border: 2px solid rgb(85, 26, 139);
+		width: 95vw;
+		height: auto;
+	}
+
+	div.sp-group_box {
+	display: flex;
+	justify-content: flex-start;
+	flex-wrap: wrap;
+	flex-direction: column;
+	}
+}
+/* sample_mypageレスポンシブ↑---------------------------------------------- */
+/* sample_mypage.html ※マイページのサンプルを見てみる↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* register .html 新規ユーザー登録↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+.register--body header a {
+	color: rgb(85, 26, 139); /*ヘッダー文字色  */
+}
+
+.register--box {
+	width: 420px;
+	height: auto;
+	/* border: solid 3px #000; */
+	border: non;
+	border-radius: 70px;
+	border-style: double;
+	border-width: 20px;
+	border-color: rgb(118, 207, 255); /*ログインのボックスより色が少し薄目  */
+	background-color: white;
+	margin-top: 130px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.register--body h1 { /*新規ユーザー登録(ページタイトル)  */
+	margin-top: 35px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-family: 'Meiryo', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial','ヒラギノ角ゴシック';
+	font-size: 32px;
+	font-weight: 600;
+}
+
+/*●一部共通 register, */
+.msg {
+	color: red;
+}
+.register-dbErrorMsg {
+	margin-top: -15px;
+	font-size: 16px;
+}
+.register--body .error {
+	font-size: 15px;
+}
+
+.register--input_text {
+	width: 200px;
+	height: 25px;
+}
+
+.register--submitButton {
+	background: #007fff;
+	border: none;
+	color: #fff;
+	font-size: 15px;
+	font-weight: 500;
+	height: 30px;
+	margin: 10px 10px 35px 140px;
+	padding: 0px 11px;
+	border-radius: 7px;
+}
+
+/* registerレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.register--body .to_home {
+	    font-size: 14.5px;
+	}
+
+	.register--box {
+		 width: 345px;
+		 border-radius: 60px;
+		 border-width: 15px;/*枠の太さ  */
+		 margin-top: 110px;
+	}
+	.register--body h1 {
+		 margin-top: 35px;
+		 margin-bottom: 20px;
+		 font-size: 24px;
+		 font-weight: bold;
+	}
+	.register--submitButton {
+		margin: 5px 0px 20px 130px;
+	}
+}
+/* registerレスポンシブ↑---------------------------------------------- */
+/* register.html 新規ユーザー登録↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+/* register_done.html 登録完了画面↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+.register_done--body header a {
+	color: #007bff;
+}
+
+body.register_done--body {
+	height: 100vh;
+}
+
+.register_done--body main {
+	height: calc(100% - 45px); /* headerを共通で45px。mainの高さを100%から引いたものに設定。 */
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.register_done--body h1 { /*登録完了しました  */
+	margin-bottom: 20px;
+	font-family: 'Meiryo', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial','ヒラギノ角ゴシック';
+	font-size: 35px;
+	font-weight: 600;
+}
+
+.register_done--body h2 { /*ログイン画面へ  */
+	margin-top: 35px;
+	margin-bottom: 20px;
+	font-weight: bold;
+	font-family: 'Meiryo', 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial','ヒラギノ角ゴシック';
+	font-size: 27px;
+	font-weight: 600;
+}
+
+/* register_doneレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.register_done--body h1 { /*登録完了しました  */
+		font-size: 23px;
+		font-weight: 650;
+	}
+	.register_done--body h2 { /*ログイン画面へ  */
+		margin-top: 28px;
+		font-size: 19px;
+	}
+}
+/* register_doneレスポンシブ↑---------------------------------------------- */
+/* register_done.html 登録完了画面↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* login.html ログイン↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+.login--body header a{
+	color: rgb(85, 26, 139);
+}
+
+/*●一部共通 login  ※▲headerにつけている.rightはheaderに統合していく  */
+.login--box{
+    width: 420px;
+    height:auto;
+    /* border: solid 3px #000; */
+    border:non;
+    border-radius: 70px;
+    border-style: double;/*枠の太さ  */
+    border-width: 20px ;
+    border-color: rgb(80, 157, 225);
+    background-color: white;
+	margin-top: 130px;
+    margin-left: auto;
+    margin-right: auto;
+ 	}
+
+.login--title{
+	 margin-top: 35px;
+	 margin-bottom: 20px;
+	 font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	 font-size: 32px;
+	 font-weight: bold;
+}
+
+.login--input_text {
+	width: 200px;
+	height: 25px;
+}
+
+.login--submitButton {
+	background: #007fff;
+	border: none;
+	color: #fff;
+	font-size:15px;
+	font-weight:500;
+	height: 30px;
+	margin: 15px 10px 35px 130px;
+	padding: 0px 9px;
+	border-radius: 7px;
+}
+
+/*共通CSSに統合
+.error {
+	 color: red;
+}*/
+
+/*共通CSSに統合
+.msg {
+	color: red;
+} */
+
+/* loginレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.login--body .new_registration {
+	    font-size: 12.5px;
+	}
+	.login--body .mypage_sumple {
+	    font-size: 12.5px;
+	}
+	.login--body .to_home {
+	    font-size: 14.5px;
+	}
+
+	.login--box {
+		 width: 345px;
+		 border-radius: 60px;
+		 border-width: 15px;/*枠の太さ  */
+		 margin-top: 110px;
+	}
+	.login--title{
+		 margin-top: 35px;
+		 margin-bottom: 20px;
+		 font-size: 26px;
+		 font-weight: bold;
+	}
+	.login--submitButton {
+		background: #007fff;
+		border: none;
+		color: #fff;
+		font-size:14px;
+		font-weight:500;
+		height: 30px;
+		margin: 5px 0px 20px 130px;
+		padding: 0px 9px;
+		border-radius: 7px;
+	}
+}
+/* loginレスポンシブ↑---------------------------------------------- */
+/* login .html ログイン↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* booktitle_list.html 教材タイトル一覧↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+/*●一部共通(ヘッダー下境界線) add,booktitle_list,list,details,mypage,question_history,answer_history  */
+.header_bottomLine_black {
+	border-bottom: 0.8px solid black;
+}
+/*●一部共通(ヘッダー背景色) booktitle_list,list,details,(mypage),  */
+.header_color_white{
+	background-color: white;
+}
+/*●一部共通(ヘッダー固定) booktitle_list,list,details,(mypage),favorite_edit  */
+.header_fixed {
+	position: fixed; /* 固定表示 */
+	width: 100%;
+}
+/*●共通(ヘッダー教材タイトル検索)↓--------------------------------------- */
+/* (list,question_history,answer_history,mypage,favorite_editと共通) */
+.searchForm_onSite {
+	display: inline-block;
+	margin-right: 10px;
+}
+.searchForm_onSite-input {
+	width: 300px;
+	height: auto;
+	border: 1.5px solid;
+	border-radius: 6px;
+	outline: 0;  /* 入力の薄い枠を非表示  */
+}
+.searchForm_onSite input::placeholder {
+	font-size: 14px;
+}
+ .searchForm_onSite-button {
+	height: auto;
+	border: 1.5px solid;
+	border-radius: 6px;
+ /* font-size: 16px; */
+}
+/* 共通(ヘッダー教材タイトル検索)↑--------------------------------------- */
+
+/*●一部共通(前のページへ戻る)booktitle_list,list,question_history,answer_history */
+.pc-previous_page {
+	font-size: 15px;
+	position: relative;
+    bottom: 2px;
+}
+
+.booktitle_list--body .to_home  {
+	position: relative;
+    bottom: 4px;
+}
+
+.booktitle_list--body h1 {/*教材タイトル一覧(ページタイトル)  */
+	 margin-bottom: 10px;
+	 padding-top: 60px;
+	 font-size: 30px;
+	 font-weight: bold;
+	 font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+}
+
+
+/*●共通 ページ内テキスト検索↓ booktitle_list,list,favorite_edit----------- */
+.booktitle_list--body .serchForm_inPage {
+	 margin:5px 0px 10px 0px;
+}
+.booktitle_list--body .serchForm_inPage-input_text {
+	width: 220px;
+	font-size: 14px;
+}
+.booktitle_list--body .serchForm_inPage input::placeholder {
+	font-size: 14px;
+}
+
+.booktitle_list--body .searchForm_inPage-button {
+	font-size: 15px;
+	border: 1px solid;
+	border-radius: 4px;
+}
+/*●共通 jQueryで使用(ハイライトと太字化) booktitle_list,list,favorite_edit*/
+.highlight{
+	background-color: #FFFCBF;
+	font-weight: bold;
+}
+/* 共通 ページ内テキスト検索↑---------------------------------------------- */
+
+.booktitle_list--body table {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 19px;
+}
+
+.booktitle_list--body .tr1 {
+	 width: 500px ;
+	 height: 41px;
+	 font-size: 20px;
+}
+
+.booktitle_list--body .tr1-th_title {
+	 width: 500px;
+}
+.booktitle_list--body .tr1-th_numberOfQuestions {
+	 width: 55px;
+	 font-size: 16px;
+	 line-height: 16px;
+}
+.tr2-td_bookTitle {
+	 word-break: break-all;  /*折り返し */
+}
+.booktitle_list--body .tr2-td_numberOfQuestions {
+	 font-size: 15px;
+}
+.booktitle_list--body .tr3-td_message {
+	 font-size: 18px;
+}
+
+/* ページネーション↓ ---------------------------------------------- */
+.booktitle_list--pagination div {
+	 display: inline-block;
+	 width: auto;
+     text-align: center;
+}
+
+.booktitle_list--pagination ul {
+	 margin-top: 10px;
+}
+/*トータル件数  */
+.booktitle_list--total_number {
+	 margin: 20px 0px 0px -5px;
+	 font-size: 12px;
+	 color: red;
+	 display: inline-block;
+}
+/* ページネーション↑ ---------------------------------------------- */
+
+/*共通CSSに統合
+.to_home {
+	font-size: 17px;
+	margin-right: 10px;
+}
+.error {
+	 color: red;
+}
+.msg {
+	color: red;
+} */
+
+/* booktitle_listレスポンシブ↓----------------------------------------------*/
+@media screen and (max-width: 960px) {
+	.booktitle_list--body header {
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+	}
+
+	.booktitle_list--body .sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+	.booktitle_list--body .sp-no_login { /*未ログイン  */
+	  color: #333333;
+	}
+
+/* ハンバーガー↓..................................*/
+   .booktitle_list--body #hamburger {
+	   position: relative;
+	   display: block;
+	   width: 30px;
+	   height: 25px;
+	   margin: 0 15px 0 auto;
+   }
+
+   .booktitle_list--body #hamburger span {
+	   position: absolute;
+	   top: 50%;
+	   left: 0;
+	   display: block;
+	   width: 100%;
+	   height: 3px;
+	   background-color: #333333;
+	   transform: translateY(-50%);
+   }
+
+   .booktitle_list--body #hamburger::before {
+   content: '';
+	   display: block;
+	   position: absolute;
+	   top: 0;
+	   left: 0;
+	   width: 100%;
+	   height: 3px;
+	   background-color: #333333;
+   }
+
+   .booktitle_list--body #hamburger::after {
+	   content: '';
+	   display: block;
+	   position: absolute;
+	   bottom: 0;
+	   left: 0;
+	   width: 100%;
+	   height: 3px;
+	   background-color: #333333;
+   }
+/* ハンバーガー↑..................................*/
+
+/* ドロワーメニュー↓================================================= */
+   .booktitle_list--body .sp-nav {
+	   background: rgba(255, 255, 255);
+	   font-size: 18px;
+	   font-weight: bold;
+   }
+
+/*文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+    .booktitle_list--body .sp-nav a {
+      /*  color: #333333; */ /*文字色の変更 */
+      color: #007bff;
+    }
+
+/* 丸バツアイコン↓..........................*/
+	.booktitle_list--body .round_btn {
+	  margin: 4px 14px 0px auto ; /*上書き位置調整 */
+	  display: block;
+	  position: relative;
+	  width: 30px;
+	  height: 30px;
+	  border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+	  border-radius: 50%;             /* 丸みの度合い */
+	  background: white; /* ボタンの背景色 */
+	}
+
+	.booktitle_list--body .round_btn::before, .booktitle_list--body .round_btn::after {
+	  content: "";
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  width: 3px; 		 /* 棒の幅（太さ） */
+	  height: 22px;		 /* 棒の高さ */
+	  background: #333333;	 /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+/* 検索フォーム↓........................................*/
+/*▲●共通(ドロワーメニュー教材タイトル検索)*/
+/*(▲決まればlist,question_history,answer_history,mypage,favorite_editと共通にする) */
+
+	.booktitle_list--body .searchForm_onSite { /*検索フォーム(formタグ)  */
+		display: inline-block;
+		/* margin-bottom: 50px; */
+		position:relative;    /*追加 */
+	}
+
+	.booktitle_list--body .searchForm_onSite-input { /*検索ボックス  */
+		width: 290px;
+		height: 38px;
+		border: 2.5px solid #007bff; /*検索ボックスの枠線・色  */
+		border-radius: 6px;
+		/*background-color: #fcf9ff; #f7f7f7; */
+	}
+
+	.searchForm_onSite input::placeholder {
+		 font-size: 17px;
+	}
+
+	 .booktitle_list--body .searchForm_onSite-button { /*虫めがねアイコン  */
+	 	width: auto;
+		height: 29px;
+		padding: 0 0 0 0;
+		border: 1.5px solid;
+		border-radius: 6px;
+	    font-size: 15px;
+	    position:absolute;
+		left: 255px;/*アイコン左右の位置調整*/
+		bottom: 7px;
+	    background: none;
+		color: #007bff;/*虫めがねの色  */
+		border: none;
+		font-size: 25px;/*アイコンサイズ*/
+	}
+/* 検索フォーム↑........................................*/
+
+	li.empty_li {
+	    height:30px;
+        width:100%
+	}
+
+/* ドロワーメニュー↑================================================= */
+
+	.booktitle_list--body header {
+	  z-index: 10; /*階層調整  */
+	}
+	.booktitle_list--body main {
+	  z-index: 1; /*階層調整  */
+	  width: 100%;
+	}
+
+	.booktitle_list--body h1 { /* 教材タイトル一覧(ページタイトル) */
+		 margin-bottom: 5px;
+		 padding-top: 45px;
+		 font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		 font-size: 22px;
+		 font-weight: 600;
+	}
+
+	.booktitle_list--body table {
+		width: 95%;
+		font-size: 14px;
+	}
+
+
+/* ページ内テキスト検索↓ booktitle_list,list,favorite_edit.......... */
+	.booktitle_list--body .serchForm_inPage {
+	  margin:5px 0px 10px 0px;
+	}
+	.booktitle_list--body .serchForm_inPage-input_text {
+	  width: 150px;
+      height: 25px;
+	  font-size: 14px;
+	}
+	.booktitle_list--body .serchForm_inPage input::placeholder {
+	  font-size: 13px;
+	}
+	.booktitle_list--body .searchForm_inPage-button {
+	  width: 35px;
+	  height: 24px;
+	  font-size: 13px;
+	  border: 1px solid;
+	  border-radius: 4px;
+	  padding: 0 0 0 0;
+	}
+/* ページ内テキスト検索↑............................................. */
+
+/* テーブル↓.................................... */
+	.booktitle_list--body .tr1-th_title {
+	  font-size: 16px;
+	}
+	.booktitle_list--body .tr1 {
+	  height: 35px;
+	}
+	.booktitle_list--body .tr1-th_numberOfQuestions {
+	  font-size: 12px;
+	  line-height: 14px;
+	}
+	.booktitle_list--body .tr2 {
+	  height: auto;
+	}
+
+	.tr2-td_bookTitle {
+	  word-break: break-all;  /*折り返し */
+	}
+	.booktitle_list--body .tr2-td_numberOfQuestions {
+	  font-size: 10px;  /*上書き調整  */
+	}
+	.booktitle_list--body .tr3-td_message {
+	  font-size: 15px;  /*上書き調整  */
+	}
+/* テーブル↑.................................... */
+
+/* ページネーションレスポンシブ↓.......................... */
+	.booktitle_list--pagination div.container {
+      font-size: 11px;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 auto;
+	}
+
+	.booktitle_list--pagination ul {
+	  margin-bottom: 0px;    /*ページネーションの下の余白を上書き調整(全件数との間) */
+	}
+	.booktitle_list--pagination a {
+	  padding-left: 3.5px;    /*ページ表示全体のページNO(aタグ)の幅を上書き調整 */
+	  padding-right: 3.5px;
+	}
+     a.pagination_sideButton {
+      padding-left: 10px;    /*ページ表示の両サイド<< と >>の幅を上書き調整 */
+	  padding-right: 10px;
+    }
+    .pagination_activeNumber {
+      padding-left: 8px;    /* アクティブページの表示幅を上書き調整 */
+	  padding-right: 8px;
+    }
+    .booktitle_list--total_number {
+      margin-top: 1px;       /*赤字全件数の上の高さを上書き調整 */
+      font-size: 11px;
+    }
+/* ページネーションレスポンシブ↑.......................... */
+
+}
+/* booktitle_listレスポンシブ↑---------------------------------------------- */
+
+/* booktitle_list.html 教材タイトル一覧↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* list.html QandA一覧↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+/* ヘッダー用教材タイトル検索↓ ------------ */
+/*○下記以外のCSSはbooktitle_listと統合(全く同じ)*/
+.list--body .to_home  {
+	position: relative;
+    bottom: 4px;
+}
+/* ヘッダー用教材タイトル検索↑ ------------ */
+
+.list--body h1 { /*Q＆A一覧(ページタイトル)  */
+	 margin-left:0px;
+	 /* margin-bottom: 5px; */
+	 padding-top: 55px ;
+	 font-size: 29px;
+	 font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	 font-weight: 600;
+}
+.list--body-title_p {
+	margin:-9px 0px 5px 0px;
+	font-size: 14px;
+}
+
+/*●共通 ページ内テキスト検索 booktitle_list,list,favorite_edit↓------- */
+.list--body .serchForm_inPage {
+	 margin:5px 0px 10px 0px;
+}
+.list--body .serchForm_inPage-input_text {
+	width: 220px;
+	font-size: 14px;
+}
+.list--body .serchForm_inPage input::placeholder {
+	font-size: 14px;
+}
+.list--body .searchForm_inPage-button {
+	font-size: 15px;
+	border: 1px solid;
+	border-radius: 4px;
+}
+
+/* 共通 ページ内テキスト検索↑------------------------------------------ */
+
+.list--body table {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 14px;
+	word-break: break-all;
+ /* border: 0px none; */
+}
+
+/*管理者用  */
+.mtp-admin {
+	width: 35px;
+}
+
+
+/* table-tr1(項目名)↓ ------------------------------------ */
+.list--table-tr1 {
+	line-height: 18px;
+}
+.list--table-tr1 .th-answer_status { /*回答区分  */
+	width: 35px;
+	font-size: 12px;
+}
+.list--table-tr1 .th-resolve_status { /*解決区分  */
+	width: 35px;
+	font-size: 12px;
+}
+.list--table-tr1 .th-book_title { /*教材タイトル  */
+	width: 350px;
+}
+.list--table-tr1 .th-page_number { /*ページ番号(動画時間)  */
+	width: 80px;
+	font-size: 12px;
+}
+.list--table-tr1 .th-question_title { /*質問タイトル  */
+	width: 210px;
+}
+.list--table-tr1 .th-question_contents { /*質問内容  */
+	width: 380px;
+}
+.list--table-tr1 .th-question_date { /*投稿日時  */
+	width: 100px;
+}
+.list--table-tr1 .th-question_thanks { /*ありがとう  */
+	width: 60px;
+	font-size: 5px;
+}
+.list--table-tr1 .th-page_views { /*閲覧数  */
+	width:60px;
+	font-size: 11px;
+}
+/* table-tr1(項目名)↑ ------------------------------------ */
+
+/* table-tr2(内容欄)↓ ------------------------------------ */
+.list--table-tr2 {
+	line-height: 15px;
+}
+
+.list--table-tr2 .td-answer_status-no {
+	width: 35px;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: red;
+	color: white;
+	border-radius: 6px;
+	border: 0.5px solid;
+}
+
+.list--table-tr2  .td-answer_status-yes {
+	width: 35px;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: blue;
+	color: white;
+	border-radius: 6px;
+	border: 0.5px solid;
+}
+
+.list--table-tr2 .td-resolve_status-yes {
+	width: 35px;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: blue;
+	color: white;
+	border-radius: 6px;
+	border: 0.5px solid;
+}
+
+.list--table-tr2 .td-resolve_status-no {
+	width: 35px;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: red;
+	color: white;
+	border-radius: 6px;
+	border: 0.5px solid;
+}
+
+.list--table-tr2 .td-question_contents {
+	white-space: nowrap;   /*折り返しなし  */
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 0;
+	text-align: left;
+}
+
+.list--table-tr2 .td-question_date {
+	font-size: 12px;
+}
+
+.list--table-tr2 .td-question_thanks {
+	width: 35px;
+	font-size: 5px;
+	font-weight: bold;
+}
+
+.list--table-tr2 .td-page_views {
+	width: 35px;
+	font-size: 5px;
+	font-weight: bold;
+}
+/* table-tr2(内容欄)↑ ------------------------------------ */
+
+/* table-tr3(履歴なしの時のメッセージ)↓ ---------- */
+.list--table-tr3 {
+	height: 35px;
+}
+
+.list--table-tr3 td {
+	font-size: 14px;
+	color: red;
+}
+/* table-tr3(履歴なしの時のメッセージ)↑ ---------- */
+
+/* ページネーション↓ -------------------------------------- */
+.list--pagination div {
+	display: inline-block;
+	width: auto;
+	text-align: center;
+}
+
+.list--pagination ul {
+	margin-top: 10px;
+}
+
+.list--total_number {
+	margin: 20px 0px 0px -5px;
+	font-size: 12px;
+	color: red;
+	display: inline-block;
+}
+/* ページネーション↑ -------------------------------------- */
+
+/*共通CSSに統合
+.error {
+	 color: red;
+}*/
+
+.sp-page_number { /* スマホ用レスポンシブ用aリンク追加  */
+	display: none; /* 非表示  */
+}
+/* listレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.list--body header {
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+	}
+
+	.list--body .sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+
+
+	.list--body .sp-no_login { /*未ログイン  */
+		color: #333333;
+	}
+
+/* ハンバーガー↓........................................*/
+	.list--body #hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;
+	}
+	.list--body #hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+		transform: translateY(-50%);
+	}
+	.list--body #hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+	.list--body #hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+/* ハンバーガー↑........................................*/
+
+	.list--body .sp-nav {
+		background: rgba(255, 255, 255);
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+	.list--body .sp-nav a { /*ドロワーメニューの文字色 */
+		/*  color: #333333; */
+		color: #007bff;
+	}
+	.list--body .sp-nav_wrapper { /*ドロワーメニューと透明背景の位置・階層調整  */
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+/* ドロワーメニュー↑..........................*/
+
+/* 丸バツアイコン↓..........................*/
+	.list--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.list--body .round_btn::before, .list--body .round_btn::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+/* 検索フォーム↓........................................*/
+	.list--body .searchForm_onSite { /*検索フォーム(formタグ)  */
+		display: inline-block;
+		/* margin-bottom: 50px; */
+		position: relative; /*追加 */
+	}
+
+	.list--body .searchForm_onSite-input { /*検索ボックス  booktitle_listと統一可*/
+		width: 290px; /*booktitle_listと同じ */
+		height: 38px; /*booktitle_listと同じ */
+		border: 2.5px solid #007bff; /*検索ボックスの枠線・色  */
+		border-radius: 6px;
+		/*background-color: #fcf9ff; #f7f7f7; */
+	}
+
+	.list--body .searchForm_onSite-button { /*虫めがねアイコン  */
+		width: auto;
+		height: 29px;
+		padding: 0 0 0 0;
+		border: 1.5px solid;
+		border-radius: 6px;
+		font-size: 15px;
+		position: absolute;
+		left: 255px; /*アイコン左右の位置調整*/
+		bottom: 7px;
+		background: none;
+		color: #007bff; /*虫めがねの色  */
+		border: none;
+		font-size: 25px; /*アイコンサイズ*/
+	}
+/* 検索フォーム↑........................................*/
+
+	.list--body header {/*▲変更なし  booktitle_listと統一可 */
+		z-index: 10; /*階層調整  */
+	}
+	.list--body main { /*▲変更なし  booktitle_listと統一可 */
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+
+	.list--body h1 { /* Q&A一覧(ページタイトル) */
+		margin-bottom: 10px;
+		padding-top: 40px;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-size: 22px;
+		font-weight: 600;
+	}
+
+	.list--body-title_p {
+		margin: -9px 0px 5px 0px;
+		font-size: 12px;
+	}
+
+/* ページ内テキスト検索↓ booktitle_list,list,favorite_edit.......... */
+	.list--body .serchForm_inPage {
+		margin: 5px 0px 10px 0px;
+	}
+	.list--body .serchForm_inPage-input_text {
+		width: 150px;
+		height: 25px;
+		font-size: 14px;
+	}
+	.list--body .serchForm_inPage input::placeholder {
+		font-size: 13px;
+	}
+	.list--body .searchForm_inPage-button {
+		width: 35px;
+		height: 24px;
+		font-size: 13px;
+		border: 1px solid;
+		border-radius: 4px;
+		padding: 0 0 0 0;
+	}
+/* ページ内テキスト検索↑............................................. */
+
+	.list-table { /*Q&A一覧テーブル  */
+		overflow: hidden scroll; /*テーブルのスクロール化  */
+		/* white-space:nowrap; */ /*折り返しなし  */
+	}
+	.list--body table { /*Q&A一覧テーブル  */
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 14px;
+		word-break: break-all;
+		/* border: 0px none; */
+		table-layout: fixed;
+		width: 100%;
+	}
+
+/* table-tr1(項目名)↓ .................................... */
+	.list--table-tr1 {
+		line-height: 13px;
+		/* height: 30px */;
+	}
+	.list--table-tr1 .th-answer_status { /*回答区分  */
+		width: 30px;
+		font-size: 10px;
+	}
+	.list--table-tr1 .th-resolve_status { /*解決区分  */
+		width: 30px;
+		font-size: 10px;
+	}
+	.list--table-tr1 .th-book_title { /*Q&A一覧教材タイトル  */
+		width: 255px;
+		/* width: 50vw; */
+		font-size: 13px;
+	}
+
+	.list--table-tr1 .th-page_number { /*ページ番号(動画時間)  */
+		width: 50px;
+		font-size: 9px;
+	}
+	.list--table-tr1 th.th-page_number>* { /*ページ番号(動画時間)  */
+		white-space: nowrap;/* 縮小時折り返しによる崩れ防止 */
+	}
+	.list--table-tr1 .th-question_title { /*質問タイトル  */
+		width: 170px;
+		font-size: 12px;
+	}
+	.list--table-tr1 .th-question_contents { /*質問内容  */
+		width: 240px;
+		font-size: 12px;
+	}
+	.list--table-tr1 .th-question_date {
+		width: 100px;
+		font-size: 11px;
+	}
+	.list--table-tr1 .th-question_thanks {
+		width: 60px;
+		font-size: 10px;
+	}
+	.list--table-tr1 .th-page_views {
+		width:60px;
+		font-size: 11px;
+	}
+/* table-tr1(項目名)↑ .................................... */
+/* table-tr2(内容欄)↓ .................................... */
+	.list--table-tr2 {
+		line-height: 12px;
+	}
+
+	.list--table-tr2 .td-answer_status-no { /*回答なし */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: red;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+		height: 28px; /* 追加変更 */
+	}
+	.list--table-tr2 .td-answer_status-yes { /*回答(あり) */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: blue;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.list--table-tr2 .td-resolve_status-yes { /*解決  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: blue;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.list--table-tr2 .td-resolve_status-no { /*未解決  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: red;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.list--table-tr2 .td-book_title { /*教材タイトル  */
+		text-align: left;
+		font-size: 12px;
+		/*  white-space: nowrap; */
+		/*  text-overflow: ellipsis; */
+		/*  width: 100%; */
+		/* overflow: hidden; */
+	}
+	.list--table-tr2 .td-page_number {
+		/* font-size: 10px; */
+		display: none;
+	}
+	.list--table-tr2 .sp-page_number { /* スマホ用レスポンシブ用aリンク追加  */
+		display: table-cell; /* 表示  */
+		font-size: 10px;
+	}
+
+	.list--table-tr2 .sp-page_number a { /*ページ番号(動画時間)リンクをセル全体に適用  */
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.list--table-tr2 .td-question_title { /*質問タイトル  */
+		text-align: left;
+		font-size: 12px;
+	}
+	.list--table-tr2 td.td-question_contents { /*質問内容  */
+		text-align: left;
+		white-space: nowrap; /*テーブル全体の指定を上書き設定  */
+		font-size: 12px;
+		width:100%;
+	}
+
+	.list--table-tr2 .td-question_contents a { /*質問内容 リンクをセル全体に適用  */
+		display: inline-block;
+		width:100%;
+		text-overflow: ellipsis; /*表示領域に入らない場合は「...」  */
+		overflow: hidden;
+	}
+
+	.list--table-tr2 .td-question_date { /*投稿日時  */
+		font-size: 11px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		width: 100%;
+		overflow: hidden;
+	}
+	.list--table-tr2 .td-question_thanks {
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+	}
+	.list--table-tr2 .td-page_views {
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+	}
+
+	.scrollhint_showAdjustment { /* リストが1～2件の時もスクロールヒントが見えるように調整 */
+		margin-top: 60px;
+	}
+
+	.list--total_number {
+		margin-top: 1px; /*赤字全件数の上の高さを上書き調整 */
+		font-size: 11px;
+	}
+
+/* table-tr2(内容欄)↑ .................................... */
+
+/* ページネーションレスポンシブ↓.......................... */
+	.list--pagination div.container {
+      font-size: 11px;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 auto;
+	}
+
+	.list--pagination ul {
+	  margin-bottom: 0px;    /*ページネーションの下の余白を上書き調整(全件数との間) */
+	}
+
+	.list--total_number {
+		margin-top: 1px; /*赤字全件数の上の高さを上書き調整 */
+		font-size: 11px;
+	}
+/* ページネーションレスポンシブ↑.......................... */
+
+}
+/* listレスポンシブ↑------------------------------------------------- */
+/* list.html QandA一覧↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* question_details.html 質問詳細↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+/*●一部共通 add,list,booktitle_list,details,mypage,answer,answer_histrory等  */
+.body_color_white {
+  background-color: white;
+}
+
+.details--body .question_detail-h1 {
+	 font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	 margin-left:0px;
+	 padding-top: 65px;
+	 font-size: 40px;
+	 font-weight: bold;
+}
+
+
+/*●一部共通 details, login, add  */
+.error {
+	 color: red;
+}
+
+/* question_details 質問群↓ ------------------------------------------------------ */
+/*●一部共通 details,answer,comment */
+.questionContentsArea {
+	width: 700px;
+	margin: 0 auto;       /*中央揃え  */
+}
+
+/* 質問テーブル上(ヘッド)↓..........................*/
+.question_head {
+	text-align: left;    /*左寄せ  */
+	display: flex;
+	align-items: flex-end; /*下揃え  */
+	margin: 0px 5px -3px 30px;
+
+}
+
+.question_head-group1 {  /*ヘッドグループ1  質問～解・未解決まで  */
+	width: 170px;
+	display: inline-block;
+	margin-bottom: -2px;
+}
+.question_head-group2 {  /*ヘッドグループ2  投稿日時～ありがとうまで  */
+	width: 520px;
+	display: inline-block;
+	margin-bottom: 3px;
+}
+form.question_thanks, #thanksButton {
+	display: inline-block;
+}
+/*●一部共通 details,answer,comment */
+.question_head p {
+	display: inline-block;
+	vertical-align: middle;
+}
+/*●一部共通 details,answer,comment */
+ .question_head-question {
+	margin: 0px 5px 0px 0px;
+	font-size: 23px;
+	font-weight: bold;
+	color: red;
+}
+
+ .question_head-status {
+	/* padding:3px 3px; */
+	margin-bottom: -6px;
+	width: 40px;
+	line-height: 25px;
+	font-weight: bold;
+	border-radius: 6px;
+	/* border: 0px none; */
+	color: white;
+	text-align: center;
+}
+ .answer_status-no {
+	background-color:red;
+	font-size:10px;
+	line-height:11px;
+	padding:1px 0px 1px 0px;
+	margin-bottom: 2px;
+}
+ .answer_status-yes {
+	background-color:blue;
+	font-size:10px;
+	line-height:11px;
+	padding:1px 0px 1px 0px;
+	margin-bottom: 2px;
+}
+ .resolve_status-yes {
+	background-color:blue;
+	font-size:13px;
+	margin-bottom: 3px;
+}
+ .resolve_status-no {
+	background-color:red;
+	font-size:11.5px;
+	margin-bottom: 3px;
+}
+/*●一部共通 details,answer,comment */
+ .question_date {
+	 font-size: 16px;
+	 margin-bottom: -5px;
+	 margin-left:5px;
+}
+ .page_views {
+	 margin-left: 10px;
+	 margin-bottom: -5px;
+	 font-size: 14px;
+}
+ .question_thanks {
+	 display: inline-block;
+	 margin: 0px 0px 0px 10px;
+	 padding-bottom: 0px;
+	 font-size: 15px;
+	 color: pink;
+}
+ .question_thanks button {
+	  border: none;
+	  outline: none;
+	  background: pink;
+	  border-radius: 5px;
+	  color: white;
+	  font-weight: 700;
+}
+ .numberOf_thanks {
+	  margin-left: 5px;
+	  font-weight: 700;
+}
+
+/*全テーブル共通*/
+.details--body table {
+	margin-left: auto;
+	margin-right: auto;
+	word-break: break-all;
+}
+/* 質問テーブル上(ヘッド)↑..........................*/
+
+/* 質問テーブル↓..........................*/
+/*●一部共通 details,answer,comment */
+.question_table th {
+	width: 160px;
+}
+.question_table td {
+	width: 510px;
+}
+.question_contents td {
+	text-align: left;
+}
+/* 質問用テーブル↑..........................*/
+
+.questionImg { /*質問画像  */
+	 width: 70%;
+	 height: auto;
+	 display: block;
+	 margin: 5px auto 5px auto;
+}
+/* question_details 質問群↑ ------------------------------------------------------ */
+
+.answerButton a {
+	/* display: block; */
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-decoration: none;
+	font-size: 20px;
+	color: white;
+	margin: auto;
+	margin-top: 25px;
+	width: 650px;
+	height: 60px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	padding: 5px 0;
+	background-color: #9966FF;
+}
+
+.self-answerButton a {
+	display: block;
+	/*display: flex; */
+	/* align-items: center; */
+	/* justify-content: center; */
+	text-decoration: none;
+	font-size: 18px;
+	color: white;
+	margin: auto;
+	margin-top: 20px;
+	margin-bottom: 35px;
+	width: 650px;
+	height: 60px;
+	border: 2px solid;
+	border-radius: 10px;
+	text-align: center;
+	padding: 5px 0;
+	background-color: red;
+}
+.self-answerButton span {
+	 font-size:14px;
+	 margin-top: 0px;
+	 display: block;
+}
+
+.question_and_answer-separateLine {
+	width: 800px;
+}
+
+/* 回答+コメント↓ ---------------------------------------------- */
+h1.answerList_h1 { /*回答一覧  */
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	margin-top:0px;
+	margin-bottom:-15px;
+	font-size: 35px;
+	font-weight: bold;
+}
+
+.answerList_h1-under_p {
+	 font-size:13px;
+	 margin-top: 14px;
+	 margin-bottom: -5px;
+}
+.details--body .answerList_message {
+	 margin-top:40px;
+	 color: red;
+}
+
+.answerContentsArea {
+	width: 700px;
+	margin: 0 auto; /*中央揃え  */
+}
+.answer-head {
+	text-align: left;    /*左寄せ  */
+}
+.answer-head p {
+	display: inline-block;
+	margin-top: 5px;
+	margin-bottom: 0px;
+}
+.answer_head-answer { /*回答  */
+	margin: 0px 5px 0px 40px;
+	font-size: 23px;
+	font-weight: bold;
+	color: blue;
+	/*position: absolute; */
+	/*left: 20%;    	 */
+}
+.answer_head-answer_date { /*回答投稿日時  */
+	font-size: 16px;
+	/* margin-right: 290px; */
+}
+
+/* 回答用テーブル↓..........................*/
+.answer-table {
+	margin-top: -5px;
+	width: 640px;
+}
+.answer-table td {
+	border: 1.5px solid black;
+	border-radius: 5px;
+	/* height: 150px; */
+	text-align: left;
+	vertical-align: top;
+}
+/* 回答用テーブル↑..........................*/
+
+.answerImg {
+	 width: 70%;
+	 height: auto;
+	 display: block;
+	 margin: 5px auto 5px auto;
+}
+
+/* コメント↓..........................*/
+.details--body .commentList-message {
+	margin-top: 15px;
+	margin-bottom: 0px; /*デフォルトを上書き */
+	color: red;
+	font-size: 15px;
+}
+.commentContentsArea {
+	width: 520px;
+	margin: 0 auto; /*中央揃え  */
+}
+
+.comment_head {
+	text-align: left;
+}
+.comment_head p {
+	display: inline-block;
+	margin-top: 10px;
+}
+.comment_head-questionSide {
+	 color: red;
+	 font-size: 15px;
+	 font-weight: bold;
+	 margin-left: 10px;
+}
+.comment_head-answerSide {
+	 color: blue;
+	 font-size: 15px;
+	 font-weight: bold;
+	 margin-left: 10px;
+}
+.comment_head-comment_date {
+	font-size: 13px;
+}
+
+/* コメント用テーブル↓*/
+.commentContentsArea table {
+	border: none;
+	margin-top: -18px;
+	width: 520px;
+}
+.comment-table td {
+	/* word-wrap: break-word; */
+	height: 25px;
+	border-radius: 2px;
+	border: 0.7px solid; /*スマホだと0.7未満は見えなくなる  */
+	text-align: left;
+	vertical-align: top;
+	font-size: 13px;
+}
+/* コメント用テーブル↑*/
+
+.commentImg {
+	 width: 70%;
+	 height: auto;
+	 display: block;
+	 margin: 5px auto 5px auto;
+}
+/* コメント↑..........................*/
+
+/* コメントボタン  */
+.commentButton a {
+	display: inline-block;
+	vertical-align: middle;
+	text-align: center;
+	margin: 15px 6px 15px 6px;
+	padding: 5px 0;
+	height: 34px;
+	width: 210px;
+	color: white;
+	text-decoration: none;
+	border-radius: 5px;
+	border: 1.5px solid;
+	font-size: 14px;
+}
+.commentButton-questionSide {
+	background-color: rgb(235, 97, 0);
+}
+.commentButton-answerSide {
+	background-color: #9966FF;
+}
+
+.answer_and_answer-separateLine {
+	width: 690px;
+}
+/* 回答+コメント↑ ---------------------------------------------- */
+
+/* question_detailsレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.details--body header {
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+	}
+
+	.details--body .sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+
+	.details--body .sp-no_login { /*未ログイン  */
+		color: #333333;
+	}
+/* ハンバーガー↓........................................*//*▲listと統一可  */
+	.details--body #hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;
+	}
+	.details--body #hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+		transform: translateY(-50%);
+	}
+	.details--body #hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+	.details--body #hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+/* ハンバーガー↑........................................*/
+
+	.details--body .sp-nav {
+		background: rgba(255, 255, 255);
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+	.details--body .sp-nav a { /*ドロワーメニューの文字色 */
+		color: #007bff;
+	}
+	.details--body .sp-nav_wrapper { /*ドロワーメニューと透明背景の位置・階層調整  */
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+/* 丸バツアイコン↓..........................*/
+	.details--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.details--body .round_btn::before, .details--body .round_btn::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+/* 検索フォーム↓........................................*/
+	.details--body .searchForm_onSite { /*検索フォーム(formタグ)  */
+		display: inline-block;
+		/* margin-bottom: 50px; */
+		position: relative; /*追加 */
+	}
+
+	.details--body .searchForm_onSite-input { /*検索ボックス listと統一可*/
+		width: 290px;  /*listと同じ */
+		height: 38px; /*listと同じ */
+		border: 2.5px solid #007bff; /*検索ボックスの枠線・色  */
+		border-radius: 6px;
+		/*background-color: #fcf9ff; #f7f7f7; */
+	}
+
+	.details--body .searchForm_onSite-button { /*虫めがねアイコン  */
+		width: auto;
+		height: 29px;
+		padding: 0 0 0 0;
+		border: 1.5px solid;
+		border-radius: 6px;
+		font-size: 15px;
+		position: absolute;
+		left: 255px; /*アイコン左右の位置調整*/
+		bottom: 7px;
+		background: none;
+		color: #007bff; /*虫めがねの色  */
+		border: none;
+		font-size: 25px; /*アイコンサイズ*/
+	}
+/* 検索フォーム↑........................................*/
+
+	.details--body header {
+		z-index: 10; /*階層調整  */
+	}
+	.details--body main {
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+
+	.details--body .question_detail-h1 {  /*質問詳細  */
+	     margin-bottom: 0px;
+		 padding-top: 42px;
+		 font-size: 24px;
+		 font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		 font-weight: bold;
+	}
+
+/* 質問↓ ---------------------------------------------------------------- */
+	.questionContentsArea {
+		width: 100%;
+	}
+
+/* 質問用テーブル上(ヘッド)↓..........................*/
+	/*●一部共通 details,answer,comment */
+	.question_head {
+		width: 95%;
+		margin: auto; /*幅を持ったボックスを親の中で中央寄せ  */
+		display: flex;
+		flex-wrap: wrap; /*子要素を折り返してコンテナ内で左寄せ  */
+	}
+	/*●一部共通 details,answer,comment *//*変更なし  */
+	.question_head p {
+		display: inline-block;
+		vertical-align: middle;
+	}
+
+	.question_head-group1 { /*「質問+回答+解決」グループ(テーブル上ヘッド)  */
+		display: inline-block;
+		width: 145px;
+		text-align: left;
+ 		display: flex;
+		align-items: flex-end;
+		margin-bottom: -6px;
+	}
+	.question_head-group2 { /*「投稿日時+閲覧数+ありがとう」グループ(テーブル上ヘッド)  */
+		display: inline-block;
+		width: 370px;
+		/* margin-right: auto; */
+		margin-top: 0px; /*調整  */
+		margin-bottom: -2px;
+		text-align: left;
+		display: flex;
+		align-items: flex-end;
+	}
+
+	/*●一部共通 details,answer,comment */
+	.question_head-question { /*「質問」テーブル上ヘッド */
+		margin: 0px 10px -2px 10px;
+		font-size: 19px;
+		font-weight: bold;
+		color: red;
+	}
+	.question_head-status {   /*「回答 + 解/未解決」(質問テーブル上ヘッド)共通クラス */
+		/* padding:3px 3px; */
+		margin-bottom: -6px;
+		margin-right: 5px;
+		width: 35px;
+		line-height: 23px;
+		font-weight: bold;
+		border-radius: 6px;
+		/* border: 0px none; */
+		color: white;
+		text-align: center;
+	}
+	.answer_status-no { /*回答なし  */
+		background-color: red;
+		font-size: 9px;
+		line-height: 10px;
+		padding: 1px 0px 1px 0px;
+		margin-bottom: 2px;
+	}
+	.answer_status-yes { /*回答あり */
+		background-color: blue;
+		font-size: 9px;
+		line-height: 10px;
+		padding: 1px 0px 1px 0px;
+		margin-bottom: 2px;
+	}
+	.resolve_status-yes { /*解決  */
+		background-color: blue;
+		font-size: 10px;
+		margin-bottom: 2px;
+	}
+	.resolve_status-no { /*未解決  */
+		background-color: red;
+		font-size: 9px;
+		margin-bottom: 2px;
+	}
+	/*●一部共通 details,answer,comment */
+	.question_date {                 /*質問投稿日時  */
+		font-size: 12px;
+		margin-bottom: -5px;
+		margin-left: 0px;
+	}
+	.page_views { /*閲覧数  */
+		margin-left: 5px;
+		margin-bottom: -4px;
+		font-size: 11px;
+	}
+	.question_thanks { /*ありがとう  */
+		display: inline-block;
+		margin: 0px 0px -1px 6px;
+		padding-bottom: 0px;
+		font-size: 10px;
+		color: pink;
+	}
+	.question_thanks button {
+		border: none;
+		outline: none;
+		background: pink;
+		border-radius: 5px;
+		color: white;
+		font-weight: 700;
+		padding: 1px 6px; /*調整  */
+	}
+	.numberOf_thanks {
+		margin-left: 5px;
+		font-weight: 700;
+	}
+
+	/*全テーブル共通*/
+	.details--body table {
+		margin-left: auto;
+		margin-right: auto;
+		word-break: break-all;
+	}
+/* 質問テーブル上(ヘッド)↑..........................*/
+
+/* question_details質問テーブル↓..........................*/
+/*●一部共通 details,answer,comment */
+	.question_table {
+		margin-top: 5px;
+		width: 95%;
+	}
+	.question_table th { /*教材タイトル、ページ番号(動画時間)、質問タイトル、質問内容  */
+		font-size: 11px;
+		width: 90px;
+		width: 25%;
+	}
+	.question_table td {
+		font-size: 12px;
+		width: 270px;
+		width: 75%;
+	}
+	/* tr.question_pageNumber {  ページ番号(動画時間)
+		line-height: 12px;
+	} */
+	.question_pageNumber th {
+		font-size: 10px;
+	}
+
+	.question_contents td {
+		text-align: left;
+	}
+/* question_details質問テーブル↑..........................*/
+
+	.questionImg { /*質問画像  */
+		width: 80vw;
+		height: auto;
+		display: block;
+		margin: 5px auto 5px auto;
+	}
+/* 質問↑ ---------------------------------------------------------------- */
+
+	p.answerButton { /*回答ボタン  */
+		margin-bottom: 0px; /*追加変更  ボタンとボタンの間調整*/
+	}
+	.answerButton a { /*回答ボタン  */
+		/* display: block; */
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		text-decoration: none;
+		font-size: 14px;
+		color: white;
+		margin: auto;
+		margin-top: 10px;
+		width: 300px;
+		height: 45px;
+		border: 2px solid;
+		border-radius: 10px;
+		text-align: center;
+		padding: 5px 0;
+		background-color: #9966FF;
+	}
+	.self-answerButton a { /*セルフアンサーボタン  */
+		display: block;
+		/*display: flex; */
+		/* align-items: center; */
+		/* justify-content: center; */
+		text-decoration: none;
+		font-size: 14px;
+		color: white;
+		margin: auto;
+		margin-top: 7px;
+		margin-bottom: 15px;
+		width: 300px;
+		height: 43px;
+		border: 2px solid;
+		border-radius: 10px;
+		text-align: center;
+		padding: 3px 0;
+		background-color: red;
+	}
+	.self-answerButton span {
+		font-size: 11px;
+		margin-top: -5px;
+		display: block;
+	}
+	.question_and_answer-separateLine {
+		width: 95vw;
+	}
+
+
+/* 回答+コメント↓ ---------------------------------------------- */
+	h1.answerList_h1 {
+		margin-top: 0px;
+		margin-bottom: -15px;
+		font-size: 22px;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-weight: bold;
+	}
+	.answerList_h1-under_p {
+		font-size: 12px;
+		margin-top: 14px;
+		margin-bottom: -5px;
+	}
+	h1.question_detail-h1  {
+		margin-bottom: 0px;
+		padding-top: 45px;
+		font-size: 22px;
+	}
+	.details--body .answerList_message {
+		margin-top: 40px;
+		color: red;
+		font-size: 14px;
+	}
+
+	.answerContentsArea {
+		width: 100%;
+	}
+
+/* 回答テーブル上(ヘッド)↓..........................*/
+	.answer-head {
+		width: 95%;
+		margin: 0 auto;/*幅を持ったボックスを親の中で中央寄せ  */
+		margin-bottom: 1px
+	}
+
+	.answer-head p {
+		display: inline-block;
+		margin-top: 5px;
+		margin-bottom: 0px;
+	}
+	.answer_head-answer { /*「回答」回答用テーブル上ヘッド */
+		margin: 0px 5px 0px 8px;
+		font-size: 19px;
+		font-weight: bold;
+		color: blue;
+	}
+	.answer_head-answer_date { /*回答投稿日時  */
+		font-size: 12px;
+		margin-right: 95px;
+	}
+/* 回答テーブル上(ヘッド)↑..........................*/
+
+/* 回答用テーブル↓..........................*/
+	.answer-table {
+		margin-top: -5px;
+		width: 340px;
+		width: 95%;
+	}
+	.answer-table td {
+		border: 1px solid black;
+		border-radius: 5px;
+		/* height: 150px; */
+		height: 20px;
+		text-align: left;
+		vertical-align: top;
+		font-size: 12px;
+	}
+/* 回答用テーブル↑..........................*/
+	.answerImg { /*回答画像  */
+		width: 80vw;
+		height: auto;
+		display: block;
+		margin: 5px auto 5px auto;
+	}
+
+	.details--body .commentList-message {
+		margin-top: 15px;
+		margin-bottom: 0px; /*デフォルトを上書き */
+		color: red;
+		font-size: 13px;
+	}
+
+	.commentContentsArea {
+		width: 90%;
+	}
+
+/* 既存コメントテーブルヘッド↓..........*/
+	.comment_head {
+		width: 85%;
+		margin: 0 auto; /*幅を持ったボックスを親の中で中央寄せ  */
+	}
+	.comment_head p {
+		display: inline-block;
+		margin-top: 10px;
+		margin-bottom: 14px; /*bootstrap上書き変更  */
+	}
+
+	.comment_head-questionSide { /*「質問者」コメント用テーブル上ヘッド */
+		color: red;
+		font-size: 15px;
+		font-weight: bold;
+		margin-left: 6px;
+	}
+	.comment_head-answerSide { /*「回答者」コメント用テーブル上ヘッド */
+		color: blue;
+		font-size: 15px;
+		font-weight: bold;
+		margin-left: 6px;
+	}
+	.comment_head-comment_date { /*コメント投稿日時  */
+		font-size: 12px;
+	}
+/* 既存コメントテーブルヘッド↑..........*/
+
+/* 既存コメントテーブル↓................*/
+	.commentContentsArea table {
+		border: none;
+		margin-top: -16px;
+		width: 85%;
+	}
+	.comment-table td {
+		/* word-wrap: break-word; */
+		height: 20px;
+		border-radius: 2px;
+		border: 0.7px solid; /*スマホだと0.7未満は見えなくなる  */
+		text-align: left;
+		vertical-align: top;
+		font-size: 12px;
+	}
+/* 既存コメントテーブル↑................*/
+
+	.commentImg { /*コメント画像  */
+		width: 80vw;
+		height: auto;
+		display: block;
+		margin: 5px auto 5px auto;
+	}
+
+/* コメントボタン↓..........*/
+	.commentButton a {
+		display: inline-block;
+		vertical-align: middle;
+		text-align: center;
+		margin: 10px 3px 0px 3px;
+		padding: 5px 0;
+		height: 30px;
+		width: 150px;
+		color: white;
+		text-decoration: none;
+		border-radius: 5px;
+		border: 1.5px solid;
+		font-size: 11px;
+	}
+	a.commentButton-questionSide {
+		background-color: rgb(235, 97, 0);
+		/*margin-top: 10px; 追加変更  */
+	}
+	a.commentButton-answerSide {
+		background-color: #9966FF;
+		/*margin-top: 5px; 追加変更  */
+	}
+/* コメントボタン↑..........*/
+
+	.answer_and_answer-separateLine {
+		width: 95vw;
+	}
+/* 回答+コメント↑ ---------------------------------------------- */
+}
+/* question_detailsレスポンシブ↑---------------------------------------------- */
+/* question_details.html 質問詳細↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* add.html 質問する↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+.add--title { /*質問投稿(ページタイトル)  */
+	margin: 20px 0px 15px 0px;
+	font-family: 'Avenir', 'Helvetica Neue', 'Helvetica', 'Arial',
+		'ヒラギノ角ゴシック';
+	font-size: 38px;
+	font-weight: 600;
+}
+
+.pc-previous_page { /*前のページに戻る  */
+	margin-bottom: 0px; /*bootstrap上書き調整  */
+	margin-right: 10px;
+	padding-bottom: -5px;
+}
+
+/*入力欄↓.....................................................  */
+.questionFormArea {
+	width: 800px;
+	margin: 0 auto;
+}
+.add--book_title { /*教材名:  */
+	margin-left: 30px;
+}
+.add--form p {
+	font-size: 17px;
+}
+
+.add--book_title input {
+	width: 485px;
+}
+
+.add--form input[type="text"] {
+	height: 30px;
+	font-size: 15px;
+}
+/*ページ番号/動画時間:  */
+.add--page_number div {
+	display: inline-block;
+}
+
+.add--page_number input[type="text"] {
+	margin: 0px 5px 10px 0px;
+	width: 80px;
+	font-size: 15px;
+	height: 31.5px;
+}
+
+.add--page_number input::placeholder {
+	font-size: 11px;
+}
+
+.add--page_number span {
+	float: left;
+	font-size: 13px;
+	color: red;
+}
+/*質問タイトル:  */
+.add--question_title input {
+	margin-right: 15px;
+	width: 485px;
+}
+/*質問内容:  */
+.add--question_contents textarea {
+	vertical-align: text-top;
+}
+/*入力欄↑.....................................................  */
+
+.add--form .quote_caution div { /*引用時の注意点  */
+	margin-left: 15%;
+	width: 80%;
+}
+
+.quote_caution p {
+	color: red;
+	font-size: 12px;
+	text-align: left;
+}
+
+/*画像添付:  */
+.image_attached {
+	margin-right: 20px;
+	line-height: 30px;
+	text-align: right;
+}
+
+.add--body input[type="file"] {
+	font-size: 13px;
+	height: 100%;
+	border: none;
+	/* background: rgb(0, 186, 186); */
+	/* color: #fff; */
+	/* 	font-weight:500; */
+	/* 	margin: 2 10px; */
+	/* 	padding: 0px 18px; */
+	/* 	border-radius: 7px; */
+}
+
+.add--form .add--calling {
+/* 	color: red; */
+	font-size: 14px;
+	margin: -20px 0px 15px 0px;
+}
+
+.add--cancel_and_submit {
+	margin-left: 430px;
+}
+
+.add--cancel_and_submit input[type="submit"] {
+	background: #007fff;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 500;
+	height: 30px;
+	margin-left: 35px;
+	padding: 0px 16px;
+	border-radius: 7px;
+}
+
+/*共通CSSに統合
+.error {
+	 color: red;
+}*/
+
+/* addレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.add--body header {
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+	}
+
+	.add--body .sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+	.add--body .sp-no_login { /*未ログイン  */
+		color: #333333;
+	}
+
+/* ハンバーガー↓........................................*//*▲listと統一可  */
+	.add--body #hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;
+	}
+	.add--body #hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+		transform: translateY(-50%);
+	}
+	.add--body #hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+	.add--body #hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+/* ハンバーガー↑........................................*/
+
+	.add--body .sp-nav {/*▲変更なし  listと統一可 */
+		background: rgba(255, 255, 255);
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+	.add--body .sp-nav a { /*ドロワーメニューの文字色 */
+		/*  color: #333333; */
+		color: #007bff;
+	}
+	.add--body .sp-nav_wrapper { /*ドロワーメニューと透明背景の位置・階層調整  */
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+/* 丸バツアイコン↓..........................*/
+	.add--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.add--body .round_btn::before, .add--body .round_btn::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+	.add--body .previous_page { /*＜＜ 前のページへ戻る  */
+		font-size: 18px;
+	}
+	.add--body .to_home { /*homeへ  */
+	    font-size: 19px;
+	}
+
+	.add--body header {
+		z-index: 10; /*階層調整  */
+	}
+	.add--body main {
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+
+	.add--title { /*質問投稿(ページタイトル)  */
+	margin: 10px 0px 10px 0px;
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	font-size: 26px;
+	font-weight: 600;
+	}
+
+/*質問入力欄↓.....................................................  */
+	.questionFormArea {
+		width: 100%;
+	}
+
+	.add--book_title { /*教材名:  */
+		text-align: left;  /*項目名を左寄せ  */
+		margin-left: 7%;
+	}
+	.add--book_title input {
+		width: 93%;
+	}
+	.add--form input[type="text"] {
+		height: 30px;
+		font-size: 15px;
+	}
+
+	.add--page_number { /*ページ番号/動画時間:  */
+		text-align: left;  /*左寄せ  */
+		margin-left: 7%;
+
+	}
+	.add--page_number p {
+		font-size:15px;
+	}
+	.add--page_number div {
+		display: block;
+	}
+
+	.add--page_number input[type="text"] { /*数字のみ(半角)  */
+		margin: 0px 5px -10px 0px;
+		width: 90px;
+		font-size: 15px;
+		height:31.5px;
+	}
+
+	.add--page_number input::placeholder {
+		font-size: 11px;
+	}
+
+	.add--page_number span{
+	    /* float: left; */
+	    display: block;
+	    margin-left: 5px;
+	    font-size: 10px;
+	}
+
+	p.add--question_title { /*質問タイトル:  */
+		text-align: left;  /*左寄せ  */
+		margin-left: 7%;
+		margin-top: 25px;
+		display: block;
+	}
+	.add--question_title input {
+		margin-right:0px;
+		width: 93%;
+	}
+	.add--question_title input::placeholder {
+		font-size: 15px;
+	}
+
+	p.add--question_contents { /*質問内容:  */
+		text-align: left;  /*左寄せ  */
+		margin-left: 7%;
+	}
+	.add--question_contents textarea {
+		width: 93%;
+	}
+	.add--question_contents textarea::placeholder {
+		font-size: 15px;
+	}
+/*質問入力欄↑.....................................................  */
+	.add--form .quote_caution div { /*引用時の注意点  */
+	margin: 0 auto;
+	width: 85%;
+	}
+	.quote_caution p {
+	font-size: 11px;
+    }
+
+	.image_attached { /*画像添付:  */
+		text-align: left;  /*項目名を左寄せ  */
+		margin-left: 7%; /*上書き調整  */
+		line-height: 30px;
+		/*display: flex;   要素を横一列  */
+		width: auto; /*margin分を100%に含める  */
+	}
+
+	.add--body input[type="file"]{
+	 	font-size:13px;
+		height: 100%;
+	 	border: none;
+	}
+
+	.add--form .add--calling { /*呼びかけ  */
+		 /* color: red; */
+		 font-size: 11.5px;
+		 margin: -20px 0px 20px 0px;
+	}
+
+	.add--cancel_and_submit { /*キャンセルする  */
+		/* display:inline-block;*/
+ 		 margin-left: 30%;
+	}
+
+	.add--cancel_and_submit a {
+		font-size: 15px;
+	}
+	.add--cancel_and_submit input[type="submit"]{
+		margin-left: 25px;
+		font-size: 15px;
+	}
+
+	.add--body.sp_br {
+		display: block;
+	}
+}
+/* addレスポンシブ↑---------------------------------------------- */
+/* add.html 質問する↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* answer.html 回答投稿↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+h1.answer--title {
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	font-size: 40px;
+	font-weight: bold;
+	padding-top: 65px;
+}
+
+/* 質問テーブルの表示↓ ○下記以外のCSSはdetailsと統合 --------*/
+.answer--body .question_head-question { /*「質問」ヘッド  */
+	margin-bottom: -2px;   /* 上書き調整 */
+
+}
+.answer--body .question-date { /*投稿日時：  */
+	font-size: 16px;
+	margin-bottom: 0px; /* 上書き調整 */
+	margin-left: 5px;
+}
+
+.answer--body .question_table { /*質問テーブル  */
+	margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    word-break: break-all;
+	border: 2px solid black;
+ /* border-collapse: separate; */
+}
+/* 質問テーブルの表示↑ ------------------------------------- */
+
+.answerContents-separateLine {
+	width: 750px;
+}
+
+/* 回答内容の表示↓ -----------------------------------*/
+h1.answerContents--title { /*回答内容  */
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	font-size: 34px;
+	font-weight: 500;
+	padding-top: 15px;
+	margin-bottom: 0px;/* デフォルトから上書き */
+}
+h1.selfAnswerContents--title { /*セルフ回答内容  */
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	font-size: 29px;
+	font-weight: 600;
+	padding-top: 15px;
+	margin-bottom: 0px;/* デフォルトから上書き */
+}
+.answerFormArea {
+	width: 800px;
+	margin: 0 auto;
+}
+
+.answer--body .answer_head-answer { /*「回答」ヘッド  */
+	font-size: 25px; /* 上書き調整 */
+	font-weight: bold;
+	color: blue;
+	margin-bottom: -30px; /* 上書き位置調整 */
+	margin-left: 10%;
+	text-align: left;
+}
+
+.answer--body .image_attached input {
+	padding-bottom: 5px;
+}
+
+.answer_contents-form textarea { /*回答内容フォーム(テキストエリア)枠  */
+	border: 1.5px solid black;
+	border-radius: 5px;
+	width: 685px;
+	height: 295px;
+}
+
+.answer_contents-form .quote_caution div { /*引用時の注意点  */
+	margin: 0 auto;
+	width: 80%;
+}
+
+.selfAnswer_radioButton-unresolve {
+	margin-left: 470px;
+}
+.selfAnswer_radioButton-resolve {
+	margin-left: 10px;
+}
+
+.answer_contents-form .cancel_and_submit {
+	margin-top: 20px;
+	margin-left: 465px;
+}
+.answer_contents-form .cancel_and_submit a {
+	font-size:16px;
+}
+.answer_contents-form .cancel_and_submit input[type="submit"] {
+	background: #007fff;
+ 	border: none;
+	color: #fff;
+	font-size:16px;
+	font-weight:500;
+	height: 30px;
+	margin-left: 40px;
+	padding: 0px 16px;
+	border-radius: 7px;
+}
+
+/* 回答内容の表示↑ -----------------------------------*/
+
+/* answerレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.comment--body header {
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+		top: 0;  /*10px分の隙間があったため調整  */
+	}
+
+	.answer--body .sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+	.answer--body .sp-no_login { /*未ログイン  */
+		color: #333333;
+	}
+/* ドロワーメニュー↓===========================================================  */
+/* ハンバーガー↓........................................*/
+	.answer--body #hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;
+	}
+	.answer--body #hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+		transform: translateY(-50%);
+	}
+	.answer--body #hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+	.answer--body #hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+/* ハンバーガー↑........................................*/
+
+	.answer--body .sp-nav {/*▲変更なし  listと統一可 */
+		background: rgba(255, 255, 255);
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+	.answer--body .sp-nav a { /*ドロワーメニューの文字色 *//*▲変更なし  listと統一可 */
+		/*  color: #333333; */
+		color: #007bff;
+	}
+	.answer--body .sp-nav_wrapper { /*ドロワーメニューと透明背景の位置・階層調整  *//*▲変更なし  listと統一可 */
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+/* 丸バツアイコン↓..........................*/
+	.answer--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.answer--body .round_btn::before, .answer--body .round_btn::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+	.answer--body .previous_page {
+		font-size: 18px;
+	}
+	.answer--body .to_home {
+	    font-size: 19px;
+	}
+
+/* ドロワーメニュー↑===========================================================  */
+
+	.answer--body header {
+		z-index: 10; /*階層調整  */
+	}
+	.answer--body main {
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+
+	h1.answer--title { /*回答投稿(ページタイトル)  */
+		margin-bottom: 0px; /*上書き調整  */
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-size: 26px;
+		font-weight: 600;
+		padding-top: 55px;
+	}
+
+/* 質問テーブルの表示↓ 下記以外のCSSはdetailsと統合 ...........*/
+	.answer--body .question_head { /*テーブル上ヘッド全体*/
+		margin-bottom: -7px;  /*テーブルヘッド一体とテーブル間の隙間詰め 上書き調整 */
+	}
+
+	.question_head-question { /*質問  */
+		/* margin: 0px 10px -2px 10px; */
+		font-size: 19px;
+
+	}
+	 .answer--body .question-date { /*投稿日時：  */
+		font-size: 12px;
+		margin-bottom: 0px; /* 上書き位置調整 */
+
+	}
+	.answer--body .question_table {
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+		word-break: break-all;
+		border: 1px solid black;
+	}
+/* 質問テーブルの表示↑ ........................................ */
+
+	.answerContents-separateLine {
+		width: 95vw;
+	}
+
+/*回答投稿内容の表示↓.....................................................  */
+	h1.answerContents--title { /*「回答内容」 */
+		font-size: 25px;
+		font-weight: 600;
+		padding-top: 0px;	/*上書き調整  */
+	}
+
+	h1.selfAnswerContents--title { /*「セルフ回答内容」 */
+		font-size: 21px;
+		padding-top: 5px;
+	}
+
+	.answerFormArea {
+		width: 100%;
+	}
+
+	.answer--body .answer_head-answer { /*「回答」ヘッド */
+		font-size: 21px;      /* 上書き調整 */
+		margin-bottom: -29px; /* 上書き位置調整 */
+		margin-left: 5%;
+	}
+
+	.answer--body input[type="file"]{ /*ファイルを選択  */
+	 	font-size:13px;
+		height: 100%;
+	 	border: none;
+	 	/* padding-bottom: 5px; */
+	}
+
+	.answer_contents-form textarea { /*回答内容フォーム(テキストエリア)枠  */
+		width: 95%;
+		height: 50vw;
+	}
+
+	.answer_contents-form .quote_caution div { /*引用時の注意点  */
+		width: 91%;
+	}
+
+	.answerFormArea .selfAnswer_radioButton {
+	    text-align: right;
+	    box-sizing: borderbox;
+	    padding-right: 5%;
+	    margin-top: -10px;
+	}
+	.selfAnswer_radioButton-unresolve { /*セルフアンサー用未解決ボタン  */
+		margin-left: 0px; /*上書き調整  */
+	}
+	.selfAnswer_radioButton-resolve { /*セルフアンサー用解決ボタン  */
+		margin-left: 10px;
+	}
+
+	.answer_contents-form p.cancel_and_submit {
+		margin-top: 20px;
+		margin-left: 0;     /*上書き調整  */
+		text-align: right;
+		width: 100%;
+	}
+	.answer_contents-form .cancel_and_submit a { /*キャンセルする  */
+		font-size: 15px;
+	}
+
+	.answer_contents-form .cancel_and_submit input[type="submit"] { /*送信ボタン  */
+		font-size: 15px;
+		margin-right: 6%;
+	}
+
+/*回答投稿内容の表示↑.....................................................  */
+
+}
+/* answerレスポンシブ↑---------------------------------------------- */
+/* answer.html 回答投稿↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* comment.html コメント投稿↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+.comment--title { /*コメント投稿  */
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	font-size: 34px;
+	font-weight: bold;
+	padding-top: 65px;
+}
+
+/* 質問の表示↓ ○下記以外のCSSはdetailsと統合 -----------*/
+.comment--body .question_head { /*質問ヘッド枠(ボックス)  */
+    margin-bottom: -5px /* 上書き */
+ }
+.comment--body .question_head-question { /*質問ヘッド文字  */
+	margin: 0px 5px 0px 20px; /* 上書き */
+	font-size: 23px;
+	font-weight: bold;
+	color: red;
+}
+.comment--body .question-date { /*投稿日時：  */
+	 font-size: 16px;
+	 margin-bottom: 2px; /* 上書き位置調整 */
+	 margin-left: 5px;
+}
+/*全テーブル共通*/
+.comment--body table {
+	margin-left: auto;
+	margin-right: auto;
+	word-break: break-all;
+}
+.comment--body .question_table {
+	border: 2px solid black;
+}
+/* 質問の表示↑ ----------------------------------------- */
+
+
+.commentContents-separateLine {
+	width: 750px;
+}
+
+/* コメントの表示↓ ○下記以外のCSSはdetailsと統合 -------*/
+.comment--body .commentList-message {
+	margin-top: 15px;
+	font-size: 15px;
+	/*margin-bottom: 0px; デフォルトを上書き */
+	color: red;
+}
+/* コメントの表示↑ ------------------------------------- */
+
+
+/* コメント投稿内容の表示↓ ---------------------------------------*/
+h1.commentContents--title { /*コメント内容  */
+	margin-top: 25px;
+  /*margin-bottom: 0px; デフォルトから上書き */
+	font-size: 30px;
+	font-family: Meiryo;
+	font-weight: bold;
+}
+/* .commentFormArea .comment_head {
+	margin-top: -5px;
+} */
+.commentFormArea {
+	width: 700px;
+	margin: 0 auto;
+}
+.commentFormArea .comment_head p { /*質問者＆回答者共通  */
+	margin-top: 0px;		/*上書き調整(デフォルトmargin-top:10px) */
+	margin-bottom: -5px;
+	font-size: 20px;		/* 上書き調整 */
+	font-weight: bold;
+}
+
+.commentFormArea .comment_head-questionSide { /*質問者  */
+	margin-left: 20px;
+}
+.commentFormArea .comment_head-answerSide { /*回答者  */
+	margin-left: 20px;
+}
+.comment_contents-form {
+	margin-top: -25px;
+}
+
+.comment_contents-form textarea {/*元はcols="90" rows="7→約685×175pxに相当  */
+	border: 1.5px solid black;
+	border-radius: 5px;
+	margin-bottom: 8px;
+
+}
+
+.comment_contents-form .quote_caution div { /*引用時の注意点  */
+	margin: 0 auto;
+	width: 95%;
+}
+
+.comment--image_attached {
+	margin-left: 360px;
+}
+.comment--image_attached input {
+	padding-bottom: 5px;
+}
+
+.comment_radioButton-resolve {
+	margin-left: 530px;
+}
+.comment_radioButton-unresolve {
+	margin-left: 10px;
+}
+.comment_contents-form .cancel_and_submit {
+	margin-top: 20px;
+	margin-left: 465px;
+}
+.comment_contents-form .cancel_and_submit a {
+	font-size:16px;
+}
+.comment_contents-form .cancel_and_submit input[type="submit"] {
+	background: #007fff;
+ 	border: none;
+	color: #fff;
+	font-size:16px;
+	font-weight:500;
+	height: 30px;
+	margin-left: 40px;
+	padding: 0px 16px;
+	border-radius: 7px;
+}
+
+
+/* コメント投稿内容の表示↑ ---------------------------------------*/
+
+/* commentレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.comment--body header {
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+		top: 0;  /*10px分の隙間があったため調整  */
+	}
+
+	.comment--body .sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+	.comment--body .sp-no_login { /*未ログイン  */
+		color: #333333;
+	}
+/* ドロワーメニュー↓===========================================================  */
+/* ハンバーガー↓........................................*/
+	.comment--body #hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;
+	}
+	.comment--body #hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+		transform: translateY(-50%);
+	}
+	.comment--body #hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+	.comment--body #hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+/* ハンバーガー↑........................................*/
+
+	.comment--body .sp-nav {
+		background: rgba(255, 255, 255);
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+	.comment--body .sp-nav a { /*ドロワーメニューの文字色 *//*▲変更なし  listと統一可 */
+		/*  color: #333333; */
+		color: #007bff;
+	}
+	.comment--body .sp-nav_wrapper { /*ドロワーメニューと透明背景の位置・階層調整  */
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+/* 丸バツアイコン↓..........................*/
+	.comment--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.comment--body .round_btn::before, .comment--body .round_btn::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+	.comment--body .previous_page {
+		font-size: 18px;
+	}
+	.comment--body .to_home {
+	    font-size: 19px;
+	}
+
+/* ドロワーメニュー↑===========================================================  */
+
+	.comment--body header {
+		z-index: 10; /*階層調整  */
+	}
+	.comment--body main {
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+	 .comment--body .question_head {
+   		margin-bottom: -10px /* 上書き */
+	}
+
+	.comment--body .commentList-message { /*この回答に対するコメントはありません  */
+		font-size: 12px;
+	}
+
+	.comment--body .question_head-question { /*質問ヘッド  */
+		margin: 0px 5px 0px 15px;  /*上書き */
+		font-size: 21px;
+	}
+
+	.comment--body .question-date { /*投稿日時：  */
+		 font-size: 12px;
+		 margin-bottom: 3px;
+	}
+
+	h1.comment--title { /*回答投稿(ページタイトル)  */
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-size: 25px;
+		font-weight: 600;
+		margin-bottom: 0px; /*上書き調整  */
+		padding-top: 45px;
+	}
+
+	.commentContents-separateLine {
+	    width: 95vw;
+	}
+
+	.commentFormArea {
+		width: 100%;
+	}
+
+	.commentFormArea .comment_head p { /*質問者＆回答者共通  */
+	margin-left: 5px;
+	}
+
+	h1.commentContents--title { /*「回答内容」 */
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-size: 23px;
+		font-weight: 600;
+		margin-top: 20px; /*上書き調整  */
+		margin-bottom: 5px;
+		padding-top: 0px;	/*上書き調整  */
+	}
+
+	.comment--body input[type="file"]{ /*ファイルを選択  */
+	 	font-size:13px;
+		height: 100%;
+	 	border: none;
+	 	/* padding-bottom: 5px; */
+	}
+
+	.comment_contents-form textarea { /*回答内容フォーム(テキストエリア)枠  */
+		width: 90%;
+		margin-left: 5px;
+		height: 40vw;
+	}
+
+	.comment_contents-form .quote_caution div { /*引用時の注意点  */
+		width: 90%;
+	}
+
+	.commentFormArea .comment_radioButton {
+	    text-align: right;
+	    box-sizing: borderbox;
+	    padding-right: 5%;
+	    margin-top: -10px;
+	}
+	.comment_radioButton-resolve {
+		margin-left: 0px;
+	}
+	.comment_radioButton-unresolve {
+		margin-left: 10px;
+	}
+	.comment_contents-form p.cancel_and_submit {
+		margin-top: 20px;
+		margin-left: 0;     /*上書き調整  */
+		text-align: right;
+		width: 100%;
+	}
+	.comment_contents-form .cancel_and_submit a { /*キャンセルする  */
+		font-size: 15px;
+	}
+
+	.comment_contents-form .cancel_and_submit input[type="submit"] { /*送信ボタン  */
+		font-size:15px;
+		margin-right: 6%;
+	}
+
+}
+/* commentレスポンシブ↑---------------------------------------------- */
+/* comment.html コメント投稿↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* mypage.html マイページ↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+.mypage--body header { /*階層調整  */
+  z-index: 10;
+}
+.mypage--body main { /*階層調整  */
+  z-index: 1;
+  width: 100%;
+}
+.mypage--body .to_home {
+	margin-right: 5px;	/* 共通CSSを上書き 10px→5px */
+}
+
+
+.mypage--title { /*マイページ(ページタイトル)  */
+	margin-bottom: 0px;	/*デフォルトから上書き */
+	padding-top:65px ;	;
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	font-size: 35px;
+	font-weight: 600;
+
+}
+
+/* ボタン(質問履歴・回答履歴・お気に入りの編集)↓ ----------------- */
+.btn, a.btn {
+	color: #fff;
+	background-color: #eb6100;
+}
+
+.btn:hover, a.btn:hover {
+	color: #fff;
+	background: #f56500;
+}
+
+/*
+	 .btn {
+      display: inline;
+      margin: 100px;
+      padding: 100px;
+	} */
+
+.mypage--btns *, .mypage--btns *:before, .mypage--btns *:after {
+	-webkit-box-sizing: inherit;
+	box-sizing: inherit;
+}
+
+.mypage--btns {
+	-webkit-box-sizing: border-box;
+	box-sizing: border-box;
+	font-size: 62.5%;
+	/* font-family: Meiryo; */
+}
+
+.btn, a.btn, button.btn {
+	margin: 25px;
+	height: 200px;
+	width: 280px;
+	border-radius: 50px;
+	font-size: 25px;
+	line-height: 170px;
+	font-weight: 600;
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	position: relative;
+	display: inline-block;
+	padding: 1rem 1rem;
+	cursor: pointer;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+	-webkit-transition: all 0.3s;
+	transition: all 0.3s;
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	letter-spacing: 0.1em;
+	color: #fff;
+}
+
+.btn--orange, a.btn--orange {
+	background-color: rgb(235, 97, 0);
+}
+.btn--orange:hover, a.btn--orange:hover {
+	background: rgb(245, 101, 0);
+}
+
+.btn--blue, a.btn--blue {
+	background-color: rgb(122, 8, 240);
+}
+.btn--blue:hover, a.btn--blue:hover {
+	background: rgb(122, 88, 240);
+}
+
+.btn--green, a.btn--green {
+	background-color: rgb(0, 186, 186);
+}
+.btn--green:hover, a.btn--green:hover {
+	background: rgb(74, 186, 186);
+}
+.mypage--btns .btn--green {
+	font-size: 21px;
+}
+
+/* ボタン(質問履歴・回答履歴・お気に入りの編集)↑ ----------------- */
+
+.mypage--favoriteList h1 { /*お気に入りタイトル一覧(サブタイトル)  */
+	margin-left:0px ;
+	padding-top:20px ;
+	margin-bottom: 0px;	/*デフォルトから上書き  */
+	font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	font-size: 28px;
+	font-weight: 600;
+}
+.mypage--favoriteList .annotation1 {
+	margin-left: 0px;
+	margin-top: 5px;
+	font-size: 15px;
+}
+.mypage--favoriteList .annotation2 {
+	margin-top: 50px;
+	font-size : 18px;
+	color: red;
+}
+
+.bookTitleList {
+	/*  flex-direction: column; */
+	display: inline-block;
+}
+
+.bookTitleList ul {
+	margin: auto;
+	text-align: left;
+	font-size: 21px;
+	width: 500px;
+	word-break: break-all;
+}
+/* mypageレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.mypage--body header {
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+	}
+
+	.mypage--body .sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+
+/* ハンバーガー↓........................................*//*▲listと統一可  */
+	.mypage--body #hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;
+	}
+	.mypage--body #hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+		transform: translateY(-50%);
+	}
+	.mypage--body #hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+	.mypage--body #hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+/* ハンバーガー↑........................................*/
+
+	.mypage--body .sp-nav {/*▲変更なし  listと統一可 */
+		background: rgba(255, 255, 255);
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+	.mypage--body .sp-nav a { /*ドロワーメニューの文字色 *//*▲変更なし  listと統一可 */
+		/*  color: #333333; */
+		color: #007bff;
+	}
+	.mypage--body .sp-nav_wrapper { /*ドロワーメニューと透明背景の位置・階層調整  *//*▲変更なし  listと統一可 */
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+/* 丸バツアイコン↓..........................*/ /*▲変更なし  統一可 */
+	.mypage--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.mypage--body .round_btn::before, .mypage--body .round_btn::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+/* 検索フォーム↓........................................*/
+	.mypage--body .searchForm_onSite { /*検索フォーム(formタグ)  */
+		display: inline-block;
+		/* margin-bottom: 50px; */
+		position: relative; /*追加 */
+	}
+
+	.mypage--body .searchForm_onSite-input { /*検索ボックス listと統一可*/
+		width: 290px;  /*listと同じ */
+		height: 38px; /*listと同じ */
+		border: 2.5px solid #007bff; /*検索ボックスの枠線・色  */
+		border-radius: 6px;
+		/*background-color: #fcf9ff; #f7f7f7; */
+	}
+
+	.mypage--body .searchForm_onSite-button { /*虫めがねアイコン  */
+		width: auto;
+		height: 29px;
+		padding: 0 0 0 0;
+		border: 1.5px solid;
+		border-radius: 6px;
+		font-size: 15px;
+		position: absolute;
+		left: 255px; /*アイコン左右の位置調整*/
+		bottom: 7px;
+		background: none;
+		color: #007bff; /*虫めがねの色  */
+		border: none;
+		font-size: 25px; /*アイコンサイズ*/
+	}
+/* 検索フォーム↑........................................*/
+
+	.mypage--body header { /*▲変更なし  listと統一可▲要確認 */
+		z-index: 10; /*階層調整  */
+	}
+	.mypage--body main { /*▲変更なし  listと統一可▲要確認 */
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+	.mypage--body h1 { /* マイページ(ページタイトル) */
+		margin-bottom: 0px;
+		padding-top: 45px;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-size: 22px;
+		font-weight: bold;
+	}
+
+/* ボタン(質問履歴・回答履歴・お気に入りの編集)↓ ............*/
+	.mypage--btns {
+		-webkit-box-sizing: border-box;
+		box-sizing: border-box;
+		/* font-size: 62.5%; */
+		/* font-family: Meiryo; */
+	}
+	.mypage--btns .btn, a.btn, button.btn {
+		margin: 10px 10px 5px 10px;
+		height: 95px;
+		width: 140px;
+		border-radius: 25px;
+		font-size: 16px;
+		line-height: 60px;
+		font-weight: 600;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		position: relative;
+		display: inline-block;
+		padding: 1rem 1rem;
+		cursor: pointer;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		-ms-user-select: none;
+		user-select: none;
+		-webkit-transition: all 0.3s;
+		transition: all 0.3s;
+		text-align: center;
+		vertical-align: middle;
+		text-decoration: none;
+		letter-spacing: 0.1em;
+		color: #fff;
+	}
+	.mypage--btns .btn--green { /*緑ボタン */
+		font-size: 13px;
+		padding-left: 0;
+		padding-right: 0
+	}
+
+/* ボタン(質問履歴・回答履歴・お気に入りの編集)↑ ............*/
+
+
+	.mypage--favoriteList h1 { /*「お気に入りタイトル一覧」  */
+		margin-left:0px ;
+		padding-top: 15px ;
+		margin-bottom: 0px;	/*お気に入りタイトル一覧  */
+		font-size: 19px;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	}
+	.mypage--favoriteList .annotation1 { /*(タイトルをクリックで質問一覧ページへ)  */
+		margin-left: 0px;
+		margin-top: 5px;
+		font-size: 11px;
+	}
+	.mypage--favoriteList .annotation2 { /*※お気に入りタイトルを登録すると、ここに一覧表示されます。  */
+		margin-top: 50px;
+		font-size : 12px;
+		color: red;
+		font-weight: bold;
+	}
+
+	.bookTitleList {
+		/*  flex-direction: column; */
+		display: inline-block;
+	}
+
+	.bookTitleList ul {
+		margin: auto;
+		text-align: left;
+		font-size: 14px;
+		width: 85vw;
+		width: 350px;
+		word-break: break-all;
+	}
+
+}
+/* mypageレスポンシブ↑---------------------------------------------- */
+
+/* mypage.html マイページ↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* question_history.html 質問履歴↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+/* ヘッダー用教材タイトル検索↓ -------------------- */
+/*○下記以外のCSSはbooktitle_listと統合(全く同じ)*/
+.question_history--body .to_home {
+	position: relative;
+    bottom: 4px;
+}
+/* ヘッダー用教材タイトル検索↑ -------------------- */
+
+.question_history--body h1 {/*質問履歴(ページタイトル)  */
+	 margin-left:0px;
+	 margin-bottom: 5px;
+	 padding-top:55px ;
+	 font-size: 33px;
+	 font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';/* フォント  */
+	 font-weight: 600;
+}
+
+.question_history--body table {
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 14px;
+	 word-break: break-all;
+}
+/* table-tr1(項目名)↓ ---------------------------------------------- */
+.question_history--table-tr1 {
+	 line-height: 18px;
+}
+.question_history--table-tr1 .th-answer_status {
+	width: 35px;
+	font-size: 12px;
+}
+.question_history--table-tr1 .th-resolve_status {
+	width: 35px;
+	font-size: 12px;
+}
+.question_history--table-tr1 .th-book_title {
+	width: 350px;
+}
+.question_history--table-tr1 .th-page_number {
+	width: 80px;
+	font-size: 12px;
+}
+.question_history--table-tr1 .th-question_title {
+	width: 210px;
+}
+.question_history--table-tr1 .th-question_contents {
+	width: 380px;
+}
+.question_history--table-tr1 .th-question_date {
+	width: 100px;
+}
+.question_history--table-tr1 .th-question_thanks {
+	width: 60px;
+	font-size:5px;
+}
+.question_history--table-tr1 .th-page_views {
+	width:60px;
+	font-size: 11px;
+}
+/* table-tr1(項目名)↑ ---------------------------------------------- */
+
+/* table-tr2(内容欄)↓ ---------------------------------------------- */
+.question_history--table-tr2 {/*変更なし.listと統一可  */
+	line-height: 15px; /* デフォルトline-height: 1.5;*/
+}
+
+.question_history--table-tr2 .td-answer_status-no {
+	width: 35px;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: red;
+	color: white;
+	border-radius: 6px;
+	border: 0.5px solid;
+}
+
+.question_history--table-tr2  .td-answer_status-yes {
+	width: 35px;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: blue;
+	color: white;
+	border-radius: 6px;
+	border: 0.5px solid;
+}
+
+.question_history--table-tr2 .td-resolve_status-yes {
+	width: 35px;
+	font-size: 11px;
+	font-weight: bold;
+	background-color: blue;
+	color: white;
+	border-radius: 6px;
+	border: 0.5px solid;
+}
+
+.question_history--table-tr2 .td-resolve_status-no {
+	width: 35px;
+	font-size: 10px;
+	font-weight: bold;
+	background-color: red;
+	color: white;
+	border-radius: 6px;
+	border: 0.5px solid;
+}
+
+.question_history--table-tr2 .td-question_contents {
+	white-space: nowrap; /*折り返しなし  */
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width: 0;
+	text-align: left;
+}
+
+.question_history--table-tr2 .td-question_date {
+	font-size: 12px;
+}
+
+.question_history--table-tr2 .td-question_thanks {
+	width: 35px;
+	font-size: 5px;
+	font-weight: bold;
+}
+
+.question_history--table-tr2 .td-page_views {
+	width: 35px;
+	font-size: 5px;
+	font-weight: bold;
+}
+/* table-tr2(内容欄)↑ ---------------------------------------------- */
+
+/* table-tr3(履歴なしの時のメッセージ)↓ ---------------------------- */
+.question_history--table-tr3 {
+	 height: 35px;
+}
+.question_history--table-tr3 td {
+	 font-size: 14px;
+	 color:red;
+}
+/* table-tr3(履歴なしの時のメッセージ)↑ ---------------------------- */
+
+/* ページネーション↓ ----------------------------------------------- */
+.question_history--pagination div {
+	 display: inline-block;
+	 width: auto;
+     text-align: center;
+}
+
+.question_history--pagination ul {
+	  margin-top: 10px;
+}
+
+.question_history--total_number {
+	margin: 20px 0px 0px -5px;
+	font-size: 12px;
+	color: red;
+	display: inline-block;
+}
+/* ページネーション↑ ----------------------------------------------- */
+
+
+/* question_historyレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.question_history--body header { /*統一可  */
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+	}
+
+	.question_history--body .sp-show_userId { /*○○でログイン中  */ /*統一可  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+
+	.question_history--body .sp-no_login { /*未ログイン  */
+		color: #333333;
+	}
+
+	.question_history--body h1 { /* 質問履歴(ページタイトル) */
+		margin-bottom: 3px;
+		padding-top: 43px;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-size: 23px;
+		font-weight: 600;
+	}
+
+/* ハンバーガー↓........................................*/ /*統一可  */
+	.question_history--body #hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;
+	}
+	.question_history--body #hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+		transform: translateY(-50%);
+	}
+	.question_history--body #hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+	.question_history--body #hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+/* ハンバーガー↑........................................*/
+
+	.question_history--body .sp-nav {
+		background: rgba(255, 255, 255);
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+	.question_history--body .sp-nav a { /*ドロワーメニューの文字色 */
+		/*  color: #333333; */
+		color: #007bff;
+	}
+	.question_history--body .sp-nav_wrapper { /*ドロワーメニューと透明背景の位置・階層調整  */
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+/* 丸バツアイコン↓..........................*/ /*▲変更なし  booktitle_listと統一可 */
+	.question_history--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.question_history--body .round_btn::before, .question_history--body .round_btn::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+/* 検索フォーム↓........................................*/
+	.question_history--body .searchForm_onSite { /*検索フォーム(formタグ)  */
+		display: inline-block;
+		/* margin-bottom: 50px; */
+		position: relative; /*追加 */
+	}
+
+	.question_history--body .searchForm_onSite-input { /*検索ボックス  booktitle_listと統一可*/
+		width: 290px; /*booktitle_listと同じ */
+		height: 38px; /*booktitle_listと同じ */
+		border: 2.5px solid #007bff; /*検索ボックスの枠線・色  */
+		border-radius: 6px;
+		/*background-color: #fcf9ff; #f7f7f7; */
+	}
+
+	.question_history--body .searchForm_onSite-button { /*虫めがねアイコン  */
+		width: auto;
+		height: 29px;
+		padding: 0 0 0 0;
+		border: 1.5px solid;
+		border-radius: 6px;
+		font-size: 15px;
+		position: absolute;
+		left: 255px; /*アイコン左右の位置調整*/
+		bottom: 7px;
+		background: none;
+		color: #007bff; /*虫めがねの色  */
+		border: none;
+		font-size: 25px; /*アイコンサイズ*/
+	}
+/* 検索フォーム↑........................................*/
+
+	.question_history--body header {/*▲変更なし  booktitle_listと統一可 */
+		z-index: 10; /*階層調整  */
+	}
+	.question_history--body main { /*▲変更なし  booktitle_listと統一可 */
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+
+	.question_history-table { /*質問履歴テーブル  */
+		overflow: hidden scroll; /*テーブルのスクロール化  */
+		/* white-space:nowrap; */ /*折り返しなし  */
+	}
+	.question_history--body table { /*質問履歴テーブル  */
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 14px;
+		word-break: break-all;
+		/* border: 0px none; */
+		table-layout: fixed;
+		width: 100%;
+	}
+
+
+/* table-tr1(項目名)↓ .................................... */
+	.question_history--table-tr1 {
+		line-height: 13px;
+		/* height: 30px */;
+	}
+	.question_history--table-tr1 .th-answer_status { /*回答区分  */
+		width: 30px;
+		font-size: 10px;
+	}
+	.question_history--table-tr1 .th-resolve_status { /*解決区分  */
+		width: 30px;
+		font-size: 10px;
+	}
+	.question_history--table-tr1 .th-book_title { /*質問履歴教材タイトル  */
+		width: 255px;
+		/* width: 50vw; */
+		font-size: 13px;
+	}
+
+	.question_history--table-tr1 .th-page_number { /*ページ番号(動画時間)  */
+		width: 50px;
+		font-size: 9px;
+		/* white-space: nowrap; *//* 変更 縮小時折り返し防止 */
+	}
+	.question_history--table-tr1 th.th-page_number>* { /*ページ番号(動画時間)  */
+		white-space: nowrap;/* 変更 縮小時折り返し防止 */
+	}
+	.question_history--table-tr1 .th-question_title { /*質問タイトル  */
+		width: 170px;
+		font-size: 12px;
+	}
+	.question_history--table-tr1 .th-question_contents { /*質問内容  */
+		width: 240px;
+		font-size: 12px;
+	}
+	.question_history--table-tr1 .th-question_date {
+		width: 100px;
+		font-size: 11px;
+	}
+	.question_history--table-tr1 .th-question_thanks {
+		width: 60px;
+		font-size: 10px;
+	}
+	.question_history--table-tr1 .th-page_views {/*変更なし 統一可  */
+		width:60px;
+		font-size: 11px;
+	}
+/* table-tr1(項目名)↑ .................................... */
+
+/* table-tr2(内容欄)↓ .................................... */
+
+	.question_history--table-tr2 {/*.listと同じ 統一可  */
+		line-height: 12px;
+	}
+
+	.question_history--table-tr2 .td-answer_status-no { /*回答なし */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: red;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+		height: 28px; /* 追加変更 */
+	}
+	.question_history--table-tr2 .td-answer_status-yes { /*回答(あり) */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: blue;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.question_history--table-tr2 .td-resolve_status-yes { /*解決  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: blue;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.question_history--table-tr2 .td-resolve_status-no { /*未解決  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: red;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.question_history--table-tr2 .td-book_title { /*教材タイトル  */
+		text-align: left;
+		font-size: 12px;
+		/*  white-space: nowrap; */
+		/*  text-overflow: ellipsis; */
+		/*  width: 100%; */
+		/* overflow: hidden; */
+	}
+	.question_history--table-tr2 .td-page_number {
+		/* font-size: 10px; */
+		display: none;
+	}
+	.question_history--table-tr2 .sp-page_number { /* スマホ用レスポンシブ用aリンク追加  */
+		display: table-cell; /* 表示  */
+		font-size: 10px;
+	}
+
+	.question_history--table-tr2 .sp-page_number a { /*ページ番号(動画時間)リンクをセル全体に適用  */
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.question_history--table-tr2 .td-question_title { /*質問タイトル  */
+		text-align: left;
+		font-size: 12px;
+	}
+	.question_history--table-tr2 td.td-question_contents { /*質問内容  */
+		text-align: left;
+		white-space: nowrap; /*テーブル全体の指定を上書き設定  */
+		font-size: 12px;
+		width:100%;
+	}
+
+	.question_history--table-tr2 .td-question_contents a { /*質問内容 リンクをセル全体に適用  */
+		display: inline-block;
+		width:100%;
+		text-overflow: ellipsis; /*表示領域に入らない場合は「...」  */
+		overflow: hidden;
+	}
+
+	.question_history--table-tr2 .td-question_date { /*投稿日時  */
+		font-size: 11px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		width: 100%;
+		overflow: hidden;
+	}
+	.question_history--table-tr2 .td-question_thanks { /*ありがとう  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+	}
+	.question_history--table-tr2 .td-page_views { /*閲覧数  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+	}
+/* table-tr2(内容欄)↑ .................................... */
+/* table-tr3(履歴なしの時のメッセージ)↓ ---------------------------- */
+	.question_history--table-tr3 {
+		 height: 100px;
+	}
+	.question_history--table-tr3 td {
+		 font-size: 14px;
+		 color:red;
+		 text-align: left;
+		 padding-left: 50px;
+	}
+/* table-tr3(履歴なしの時のメッセージ)↑ ---------------------------- */
+/* ページネーションレスポンシブ↓.......................... */ /*統一可  */
+	.question_history--pagination div.container {
+		font-size: 11px;
+		padding-left: 0;
+		padding-right: 0;
+		margin: 0 auto;
+	}
+	.question_history--pagination ul {
+		margin-bottom: 0px; /*ページネーションの下の余白を上書き調整(全件数との間) */
+	}
+	.question_history--total_number {
+		margin-top: 1px; /*赤字全件数の上の高さを上書き調整 */
+		font-size: 11px;
+	}
+/* ページネーションレスポンシブ↑.......................... */
+
+}
+/* question_historyレスポンシブ↑---------------------------------------------- */
+/* question_history.html 質問履歴↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+/* answer_history.html 回答履歴↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+/* ヘッダー用教材タイトル検索↓ -------------------- */
+/*○下記以外のCSSはbooktitle_listと統合(全く同じ)*/
+.answer_history--body .to_home {
+	position: relative;
+    bottom: 4px;
+}
+/* ヘッダー用教材タイトル検索↑ -------------------- */
+
+.answer_history--body h1 {/*回答履歴(ページタイトル)  */
+	 margin-left:0px;
+	 margin-bottom: 5px;
+	 padding-top:55px ;
+	 font-size: 33px;
+	 font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';/*フォント  */
+	 font-weight: 600;
+}
+
+.answer_history--body table {
+	margin-left: auto;
+	margin-right: auto;
+	text-align: center;
+	font-size: 14px;
+	word-break: break-all;
+}
+
+/* table-tr1(項目名)↓ ---------------------------------------------- */
+.answer_history--table-tr1 {
+	 height: 50px;
+}
+.answer_history--table-tr1 .th-answer_status {
+	width: 35px;
+	font-size: 12px;
+}
+.answer_history--table-tr1 .th-resolve_status {
+	width: 35px;
+	font-size: 12px;
+}
+.answer_history--table-tr1 .th-book_title {
+	width: 300px;
+}
+.answer_history--table-tr1 .th-page_number {
+	width: 65px;
+	font-size: 11px;
+}
+.answer_history--table-tr1 .th-question_title {
+	width: 210px;
+}
+.answer_history--table-tr1 .th-border_none {
+	width: 10px;
+	border: 0px none;
+}
+.answer_history--table-tr1 .th-answer_contents {
+	width: 440px;
+	font-size: 19px;
+	border: 2px solid;
+}
+.answer_history--table-tr1 .th-answer_date {
+	width: 115px;
+}
+.answer_history--table-tr1 .th-question_thanks {
+	width: 60px;
+	font-size: 10px;
+}
+.answer_history--table-tr1 .th-page_views {
+	width:60px;
+	font-size: 10px;
+}
+
+/* table-tr1(項目名)↑ ---------------------------------------------- */
+
+/* table-tr2(内容欄)↓ ---------------------------------------------- */
+.answer_history--table-tr2 {
+	  line-height: 15px;
+}
+.answer_history--table-tr2 .td-answer_status-no {
+	 width: 35px;
+	 font-size: 11px;
+	 font-weight: bold;
+	 background-color: red;
+	 color: white;
+	 border-radius: 6px;
+	 border: 0.5px solid;
+}
+.answer_history--table-tr2  .td-answer_status-yes {
+	 width: 35px;
+	 font-size: 11px;
+	 font-weight: bold;
+	 background-color: blue;
+	 color: white;
+	 border-radius: 6px;
+	 border: 0.5px solid;
+ }
+.answer_history--table-tr2 .td-resolve_status-yes {
+	 width: 35px;
+	 font-size: 11px;
+	 font-weight: bold;
+	 background-color: blue;
+	 color: white;
+	 border-radius: 6px;
+	 border: 0.5px solid;
+}
+.answer_history--table-tr2 .td-resolve_status-no {
+	 width: 35px;
+	 font-size: 10px;
+	 font-weight: bold;
+	 background-color: red;
+	 color: white;
+	 border-radius: 6px;
+	 border: 0.5px solid;
+}
+
+.answer_history--table-tr2 .td-border_none {
+	border: 0px none;
+	font-size: 13px;
+}
+.answer_history--table-tr2 .td-answer_contents {
+	font-size: 15px;
+	border: 2px solid;
+	white-space:nowrap; /*折り返しなし  */
+	text-overflow: ellipsis;
+	overflow: hidden;
+	max-width:0;
+	text-align: left;
+}
+.answer_history--table-tr2 .td-answer_date {
+	 font-size: 14px;
+}
+.answer_history--table-tr2 .td-question_thanks {
+	 width:35px;
+	 font-size:5px;
+	 font-weight:bold;
+}
+.answer_history--table-tr2 .td-page_views {
+	 width: 35px;
+	 font-size: 5px;
+	 font-weight: bold;
+}
+/* table-tr2(内容欄)↑ ---------------------------------------------- */
+
+/* table-tr3(履歴なしの時のメッセージ)↓ ---------------------------- */
+.answer_history--table-tr3 {
+	 height: 35px;
+}
+.answer_history--table-tr3 td {
+	 font-size: 14px;
+	 color:red;
+}
+/* table-tr3(履歴なしの時のメッセージ)↑ ---------------------------- */
+
+/* ページネーション↓ ----------------------------------------------- */
+.answer_history--pagination div {
+	 display: inline-block;
+	 width: auto;
+     text-align: center;
+}
+
+.answer_history--pagination ul {
+	  margin-top: 10px;
+}
+
+.answer_history--total_number {
+	margin: 20px 0px 0px -5px;
+	font-size: 12px;
+	color: red;
+	display: inline-block;
+}
+/* ページネーション↑ ----------------------------------------------- */
+
+/* answer_historyレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.answer_history--body header { /*統一可  */
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+		top: 0px;
+	}
+
+	.answer_history--body .sp-show_userId { /*○○でログイン中  */ /*統一可  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: #007bff;
+		position: relative;
+		bottom: -3px;
+	}
+
+	.answer_history--body h1 { /* 回答履歴(ページタイトル) */
+		margin-bottom: 3px;
+		padding-top: 43px;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-size: 23px;
+		font-weight: 600;
+	}
+
+	.answer_history--body .sp-no_login { /*未ログイン  */
+		color: #333333;
+	}
+/* ハンバーガー↓........................................*/ /*統一可  */
+	.answer_history--body #hamburger {
+		position: relative;
+		display: block;
+		width: 30px;
+		height: 25px;
+		margin: 0 15px 0 auto;
+	}
+	.answer_history--body #hamburger span {
+		position: absolute;
+		top: 50%;
+		left: 0;
+		display: block;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+		transform: translateY(-50%);
+	}
+	.answer_history--body #hamburger::before {
+		content: '';
+		display: block;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+	.answer_history--body #hamburger::after {
+		content: '';
+		display: block;
+		position: absolute;
+		bottom: 0;
+		left: 0;
+		width: 100%;
+		height: 3px;
+		background-color: #333333;
+	}
+/* ハンバーガー↑........................................*/
+	.answer_history--body .sp-nav {
+		background: rgba(255, 255, 255);
+		font-size: 18px;
+		font-weight: bold;
+	}
+
+	/*※文字色を変える場合はポイントの関係で下記で指定しないと適用されない*/
+	.answer_history--body .sp-nav a { /*ドロワーメニューの文字色 */
+		/*  color: #333333; */
+		color: #007bff;
+	}
+	.answer_history--body .sp-nav_wrapper { /*ドロワーメニューと透明背景の位置・階層調整  */
+		position: relative;
+		z-index: 1;
+		top: 0;
+		left: 0;
+	}
+
+/* 丸バツアイコン↓..........................*/ /*▲変更なし  booktitle_listと統一可 */
+	.answer_history--body .round_btn {
+		margin: 4px 14px 0px auto; /*上書き位置調整 */
+		display: block;
+		position: relative;
+		width: 30px;
+		height: 30px;
+		border: 2px solid #333333; /* 丸枠の太さ・1本線・色 */
+		border-radius: 50%; /* 丸みの度合い */
+		background: white; /* ボタンの背景色 */
+	}
+	.answer_history--body .round_btn::before, .answer_history--body .round_btn::after {
+		content: "";
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 3px; /* 棒の幅（太さ） */
+		height: 22px; /* 棒の高さ */
+		background: #333333; /* バツ印の色 */
+	}
+/* 丸バツアイコン↑..........................*/
+
+/* 検索フォーム↓........................................*/
+	.answer_history--body .searchForm_onSite { /*検索フォーム(formタグ)  */
+		display: inline-block;
+		/* margin-bottom: 50px; */
+		position: relative; /*追加 */
+	}
+
+	.answer_history--body .searchForm_onSite-input { /*検索ボックス  booktitle_listと統一可*/
+		width: 290px; /*booktitle_listと同じ */
+		height: 38px; /*booktitle_listと同じ */
+		border: 2.5px solid #007bff; /*検索ボックスの枠線・色  */
+		border-radius: 6px;
+		/*background-color: #fcf9ff; #f7f7f7; */
+	}
+
+	.answer_history--body .searchForm_onSite-button { /*虫めがねアイコン  */
+		width: auto;
+		height: 29px;
+		padding: 0 0 0 0;
+		border: 1.5px solid;
+		border-radius: 6px;
+		font-size: 15px;
+		position: absolute;
+		left: 255px; /*アイコン左右の位置調整*/
+		bottom: 7px;
+		background: none;
+		color: #007bff; /*虫めがねの色  */
+		border: none;
+		font-size: 25px; /*アイコンサイズ*/
+	}
+/* 検索フォーム↑........................................*/
+
+	.answer_history--body header {/*▲変更なし  booktitle_listと統一可 */
+		z-index: 10; /*階層調整  */
+	}
+	.answer_history--body main { /*▲変更なし  booktitle_listと統一可 */
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+
+	.answer_history-table { /*質問履歴テーブル  */
+		overflow: hidden scroll; /*テーブルのスクロール化  */
+		/* white-space:nowrap; */ /*折り返しなし  */
+	}
+	.answer_history--body table { /*質問履歴テーブル  */
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 14px;
+		word-break: break-all;
+		/* border: 0px none; */
+		table-layout: fixed;
+		width: 100%;
+	}
+/* table-tr1(項目名)↓ .................................... */
+	.answer_history--table-tr1 {
+		line-height: 13px;
+		/* height: 30px */;
+	}
+	.answer_history--table-tr1 .th-answer_status { /*回答区分  */
+		width: 30px;
+		font-size: 10px;
+	}
+	.answer_history--table-tr1 .th-resolve_status { /*解決区分  */
+		width: 30px;
+		font-size: 10px;
+	}
+	.answer_history--table-tr1 .th-book_title { /*質問履歴教材タイトル  */
+		width: 255px;
+		/* width: 50vw; */
+		font-size: 13px;
+	}
+
+	.answer_history--table-tr1 .th-page_number { /*ページ番号(動画時間)  */
+		width: 50px;
+		font-size: 9px;
+		/* white-space: nowrap; *//* 変更 縮小時折り返し防止 */
+	}
+	.answer_history--table-tr1 th.th-page_number>* { /*ページ番号(動画時間)  */
+		white-space: nowrap;/* 変更 縮小時折り返し防止 */
+	}
+	.answer_history--table-tr1 .th-question_title { /*回答履歴の質問タイトル  */
+		width: 170px;
+		font-size: 12px;
+	}
+	.answer_history--table-tr1 .th-answer_contents { /*回答内容 変更不可*/
+		width: 240px;
+		font-size: 12px;
+	}
+	.answer_history--table-tr1 .th-answer_date { /*回答日時 変更不可*/
+		width: 100px;
+		font-size: 11px;
+	}
+	.answer_history--table-tr1 .th-question_thanks { /*変更なし 統一可  */
+		width: 60px;
+		font-size: 10px;
+	}
+	.answer_history--table-tr1 .th-page_views { /*変更なし 統一可  */
+		width: 60px;
+		font-size: 11px;
+	}
+/* table-tr1(項目名)↑ .................................... */
+/* table-tr2(内容欄)↓ .................................... *//*▲統一可能にする  */
+
+	.answer_history--table-tr2 {/*.listと同じ 統一可  */
+		line-height: 12px;
+	}
+
+	.answer_history--table-tr2 .td-answer_status-no { /*回答なし *//*.listと同じ 統一可  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: red;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+		height: 28px; /* 追加変更 */
+	}
+	.answer_history--table-tr2 .td-answer_status-yes { /*回答(あり) *//*.listと同じ 統一可  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: blue;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.answer_history--table-tr2 .td-resolve_status-yes { /*解決  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: blue;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.answer_history--table-tr2 .td-resolve_status-no { /*未解決  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+		background-color: red;
+		color: white;
+		border-radius: 6px;
+		border: 0.5px solid;
+	}
+	.answer_history--table-tr2 .td-book_title { /*教材タイトル  */
+		text-align: left;
+		font-size: 12px;
+	}
+	.answer_history--table-tr2 .td-page_number {
+		/* font-size: 10px; */
+		display: none;
+	}
+	.answer_history--table-tr2 .sp-page_number { /* スマホ用レスポンシブ用aリンク追加  */
+		display: table-cell; /* 表示  */
+		font-size: 10px;
+	}
+
+	.answer_history--table-tr2 .sp-page_number a { /*ページ番号(動画時間)リンクをセル全体に適用  */
+		display: block;
+		width: 100%;
+		height: 100%;
+	}
+
+	.answer_history--table-tr2 .td-question_title { /*質問タイトル  */
+		text-align: left;
+		font-size: 12px;
+	}
+	.answer_history--table-tr2 td.td-answer_contents { /*回答内容  */
+		text-align: left;
+		white-space: nowrap; /*テーブル全体の指定を上書き設定  */
+		font-size: 12px;
+		width:100%;
+	}
+	.answer_history--table-tr2 .td-border_none { /*回答履歴テーブルのみに存在 変更 */
+	font-size: 10px;
+	}
+	.answer_history--table-tr2 .td-answer_contents a { /*質問内容 リンクをセル全体に適用  */
+		display: inline-block;
+		width:100%;
+		text-overflow: ellipsis; /*表示領域に入らない場合は「...」  */
+		overflow: hidden;
+	}
+
+	.answer_history--table-tr2 .td-answer_date { /*投稿日時  */
+		font-size: 11px;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+		width: 100%;
+		overflow: hidden;
+	}
+	.answer_history--table-tr2 .td-question_thanks { /*ありがとう  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+	}
+	.answer_history--table-tr2 .td-page_views { /*閲覧数  */
+		width: 35px;
+		font-size: 9px;
+		font-weight: bold;
+	}
+
+/* table-tr2(内容欄)↑ .................................... */
+/* table-tr3(履歴なしの時のメッセージ)↓ ---------------------------- */
+	.answer_history--table-tr3 {
+		 height: 100px;
+	}
+	.answer_history--table-tr3 td {
+		 font-size: 14px;
+		 color:red;
+		 text-align: left;
+		 padding-left: 50px;
+	}
+/* table-tr3(履歴なしの時のメッセージ)↑ ---------------------------- */
+/* ページネーションレスポンシブ↓.......................... *//*統一可  */
+	.answer_history--pagination div.container {
+      font-size: 11px;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 auto;
+	}
+
+	.answer_history--pagination ul {
+	  margin-bottom: 0px;    /*ページネーションの下の余白を上書き調整(全件数との間) */
+	}
+
+	.answer_history--total_number {
+		margin-top: 1px; /*赤字全件数の上の高さを上書き調整 */
+		font-size: 11px;
+	}
+/* ページネーションレスポンシブ↑.......................... */
+
+}
+/* answer_historyレスポンシブ↑---------------------------------------------- */
+/* answer_history.html 回答履歴↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+
+
+/* favorite_edit.html お気に入り編集↓◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆*/
+.header_color_blue {
+	background-color:rgb(118, 207, 255);
+}
+
+.favorite_edit--body .show_userId {
+	border-bottom: solid 0.9px white;	/*共通CSSを上書き  */
+}
+.favorite_edit--body main {
+	 padding-top: 65px;
+}
+
+/* お気に入りタイトル一覧と削除↓ ---------------------------------- */
+.favorite_edit--box1 {
+    width:700px;
+    height:auto;
+    /* border: solid 3px #000; */
+    border:non;
+    border-radius: 50px;
+    border-style:double;
+    border-width:20px ;
+    border-color: rgb(118, 207, 255);
+    background-color: white;
+	/* margin-top:30px; */
+	/* margin-top: -15px; 一時調整用*/
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 20px;
+	padding-bottom: 40px;
+}
+
+.favorite_edit--box1 h1 {
+	 /* padding-top: 65px; */
+	 /* margin-bottom: 10px; */
+	 font-family: Meiryo;
+	 font-size: 32px;
+	 font-weight: bold;
+}
+
+.favorite_edit--box1 table {
+	width: 570px;
+	font-size: 18px;
+	word-break: break-all;
+	margin-left: auto;
+    margin-right: auto;
+}
+.favorite_edit--box1 .tr1 {
+	 width: 500px ;
+	 line-height: 30px;/* height: 41px; */
+	 font-size: 21px;
+}
+.favorite_edit--box1 .tr1-th_title {
+	 width: 500px;
+}
+.favorite_edit--box1 .tr1-th_delete {
+	 width: 50px;
+	 /* font-size: 16px;
+	 line-height: 16px; */
+}
+.favorite_edit--box1 .tr2 {
+	 line-height: 25px;
+}
+.favorite_edit--box1 .tr2-td_delete {
+	 font-size: 17px;
+}
+.favorite_edit--box1 .tr3 {
+	  height: 35px;
+}
+.favorite_edit--box1 .tr3-td_message {
+	 font-size: 16px;
+	 color: red;
+}
+/* お気に入りタイトル一覧と削除↑ ---------------------------------- */
+
+/* お気に入りタイトルを探して追加↓ -------------------------------- */
+.favorite_edit--box2 {
+    width:630px;
+    height: auto;
+    border:non;
+    border-radius: 55px;
+    border-width:10px ;
+    border-color: rgb(118, 207, 255);
+    background-color: white;
+	text-align: center;
+	margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    padding-top:0px;
+	padding-bottom: 30px;
+}
+
+.favorite_edit--box2 h1 {
+	 padding-top: 25px;
+	 font-family: Meiryo;
+	 font-size: 26px;
+	 font-weight: bold;
+}
+/* 教材タイトル検索フォーム↓..........................*/
+.favorite_edit--body .searchForm_onSite {
+	display: inline-block;
+	margin-right: 0px;	/* 上書き調整(margin-right以外はbooktitle_listと同じ) */
+}
+/* 教材タイトル検索フォーム↑..........................*/
+
+.favorite_edit--box2 p {
+	 margin: 10px 0px 10px 0px;
+	 font-size: 15px
+}
+
+/* ページ内テキスト検索フォーム↓ ....................*/
+.favorite_edit--box2 .serchForm_inPage {
+	 margin:5px 0px 10px 0px;
+}
+.favorite_edit--box2 .serchForm_inPage-input_text {
+	width: 200px;
+	font-size: 14px;
+    height:25px;
+}
+.favorite_edit--box2 .serchForm_inPage input::placeholder {
+	font-size: 13px;
+}
+.favorite_edit--box2 .searchForm_inPage-button {
+	font-size: 14px;
+	border: 1px solid;
+	border-radius: 4px;
+}
+
+/* ページ内テキスト検索フォーム↑..................*/
+
+.favorite_edit--box2 table {
+	margin-left: auto;
+    margin-right: auto;
+    width: 550px;
+    font-size: 18px;
+    word-break: break-all;
+}
+.favorite_edit--box2 .tr1 {
+	 width: 500px;
+	 line-height: 30px;/* height: 41px; */
+	 font-size: 20px;
+}
+.favorite_edit--box2 .tr1-th_title {
+	 width: 500px;
+}
+.favorite_edit--box2 .tr1-th_numberOfQuestions {
+	 font-size: 14px;
+	 line-height: 15px;
+}
+
+.favorite_edit--box2 .tr2-td_numberOfQuestions {
+	 font-size: 14px;
+}
+.favorite_edit--box2 .tr3 {
+	  height: 35px;
+}
+.favorite_edit--box2 .tr3-td_message {
+	 font-size: 16px;
+	 color: red;
+}
+.favorite_edit--box2 .tr4-td_message {
+	 font-size: 16px;
+	 color: red;
+}
+
+/* お気に入りタイトルを探して追加↑ -------------------------------- */
+
+/* ページネーション↓ ---------------------------------------------- */
+.favorite_edit--pagination div {
+	 display: inline-block;
+	 width: auto;
+     text-align: center;
+}
+
+.favorite_edit--pagination ul {
+	margin: 10px 0px 0px 40px;	/* ここだけ他のページネーションとは値が異なる  */
+}
+
+.favorite_edit--total_number {
+	/* margin: 5px 15px 0px 0px; */
+	font-size: 13px;
+	color: white;
+	display: inline-block;
+}
+/* ページネーション↑ ---------------------------------------------- */
+
+/* favorite_editレスポンシブ↓---------------------------------------------- */
+@media screen and (max-width: 960px) {
+	.favorite_edit--body header {
+		height: 35px; /*headerの高さを共通設定から上書き  */
+		padding-top: 0px; /*共通設定から上書き  */
+		display: flex;
+		align-items: center;
+	}
+
+	.favorite_edit--body .sp-show_userId { /*○○でログイン中  */
+		display: block; /* 非表示から上書きして表示 */
+		font-size: 14px;
+		font-weight: bold;
+		margin-left: 5px;
+		color: white;
+		position: relative;
+		bottom: -3px;
+	}
+	.favorite_edit--body main {
+		 padding-top: 50px;
+	}
+	.favorite_edit--body h1 { /* マイページ(ページタイトル) */
+		margin-bottom: 0px;
+		padding-top: 45px;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+		font-size: 22px;
+		font-weight: bold;
+	}
+
+/*※.sp-no_loginの未ログイン表示はmypage,question_history,answer_historyにはログイン前提のため必要ない*/
+/* ハンバーガー、ドロワーメニュー設定、丸バツアイコン、リストメニューはhomeと統一*/
+    .favorite_edit--body .sp-nav a {
+       color: rgb(85, 26, 139);
+    }
+	.favorite_edit--body header {/*▲変更なし  booktitle_listと統一可 */
+		z-index: 10; /*階層調整  */
+	}
+	.favorite_edit--body main { /*▲変更なし  booktitle_listと統一可 */
+		z-index: 1; /*階層調整  */
+		width: 100%;
+	}
+/* お気に入りタイトル一覧と削除↓ ---------------------------------- */
+	.favorite_edit--box1 {
+		width: 96vw;
+		border-radius: 35px;
+		border-width: 12px;
+		padding-top: 15px;
+		padding-bottom: 20px;
+	}
+
+	.favorite_edit--box1 h1 { /*お気に入りタイトル一覧と削除  */
+		padding-top: 0px;
+		margin-bottom: 10px;
+		font-size: 19px;
+		font-weight: bold;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	}
+
+/* テーブル↓................................................*/
+	.favorite_edit--box1 table { /*お気に入り追加テーブル  */
+		width: 80vw;
+		font-size: 14px;
+		word-break: break-all;
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.favorite_edit--box1 .tr1 {
+		width: 100%;
+		line-height: 30px;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	}
+	.favorite_edit--box1 .tr1-th_title { /*現在登録中の教材タイトル  */
+		width: 86%;
+		font-size: 15px;
+	}
+	.favorite_edit--box1 .tr1-th_delete { /*削除  */
+		width: 50px;
+		width: 14%;
+		font-size: 14px;
+	}
+	.favorite_edit--box1 .tr2 {
+		line-height: 20px;
+	}
+	.favorite_edit--box1 .tr2-td_delete {
+		font-size: 13px;
+	}
+	.favorite_edit--box1 .tr3 {
+		height: 35px;
+	}
+	.favorite_edit--box1 .tr3-td_message { /*※お気に入りタイトルを登録すると、ここに一覧表示されます。 */
+		font-size: 13px;
+		color: red;
+	}
+	.favorite_edit--box1 .tr3-td_message span { /*※お気に入りタイトルを登録すると、ここに一覧表示されます。  */
+		white-space: nowrap;    /*指定位置で改行  追加変更  */
+	}
+/* テーブル↑................................................*/
+
+/* お気に入りタイトル一覧と削除↑ ---------------------------------- */
+
+
+/* お気に入りタイトルを探して追加↓ -------------------------------- */
+	.favorite_edit--box2 {
+		width: 90vw;
+		height: auto;
+		/* border: solid 3px #000; */
+		border: non;
+		border-radius: 30px;
+		border-width: 10px;
+		border-color: rgb(118, 207, 255);
+		background-color: white;
+		text-align: center;
+		margin-top: 20px;
+		margin-right: auto;
+		margin-left: auto;
+		padding-top: 0px;
+		padding-bottom: 20px;
+	}
+
+	.favorite_edit--box2 h1 { /*お気に入りタイトルを探して追加  */
+		padding-top: 20px;
+		padding-bottom: 10px;
+		font-size: 18px;
+		font-weight: bold;
+		font-family: 'Meiryo','Avenir','Helvetica Neue','Helvetica','Arial','ヒラギノ角ゴシック';
+	}
+
+/* 教材タイトル検索フォーム↓..........................*/
+	.favorite_edit--body .searchForm_onSite {
+		margin-right: 0px; /* 上書き調整(margin-right以外はbooktitle_listと同じ) */
+	}
+	.favorite_edit--body .searchForm_onSite-input {
+		width: 255px;
+		height: 30px;
+		border: 1.5px solid;
+		border-radius: 6px;
+		outline: 0; /* 入力の薄い枠を非表示  */
+	}
+	.favorite_edit--body .searchForm_onSite input::placeholder {
+		font-size: 12px;
+	}
+	.favorite_edit--body .searchForm_onSite-button {
+		height: 29px;
+		width: 45px;
+		border: 1.5px solid;
+		border-radius: 6px;
+		font-size: 14px;
+		padding: 0 0;
+	}
+/* 教材タイトル検索フォーム↑..........................*/
+
+	.favorite_edit--box2 p {
+		margin: 10px 0px 10px 0px;
+		font-size: 12px;
+	}
+	.favorite_edit--box2 p span {
+		white-space: nowrap;    /*指定位置で改行  追加変更  */
+	}
+
+/* ページ内テキスト検索フォーム↓ ....................*/
+	.favorite_edit--box2 .serchForm_inPage {
+		margin: 5px 0px 10px 0px;
+	}
+	.favorite_edit--box2 .serchForm_inPage-input_text {
+		width: 150px;
+		font-size: 14px;
+		height: 25px;
+	}
+	.favorite_edit--box2 .serchForm_inPage input::placeholder {
+		font-size: 13px;
+	}
+	.favorite_edit--box2 .searchForm_inPage-button {
+		width: 38px;
+		border: 1px solid;
+		border-radius: 4px;
+		height: 24px;
+		font-size: 12px;
+		padding: 0 0;
+	}
+
+/* ページ内テキスト検索フォーム↑..................*/
+
+/* テーブル↓................................................*/
+	.favorite_edit--box2 table { /*教材タイトル検索テーブル  */
+		margin-left: auto;
+		margin-right: auto;
+		width: 80vw;
+		font-size: 14px;
+		word-break: break-all;
+	}
+	.favorite_edit--box2 .tr1 {
+		width: 100%;
+		line-height: 30px;
+		font-size: 20px;
+	}
+	.favorite_edit--box2 .tr1-th_title { /*教材タイトル検索結果  */
+		width: 86%;
+		font-size: 15px;
+	}
+	.favorite_edit--box2 .tr1-th_numberOfQuestions {
+		width: 14%;
+		font-size: 13px;
+		line-height: 15px;
+	}
+	.favorite_edit--box2 .tr2 {
+		line-height: 20px;
+	}
+	.favorite_edit--box2 .tr2-td_numberOfQuestions {
+		font-size: 11px;
+	}
+	.favorite_edit--box2 .tr3 {
+		height: 35px;
+	}
+
+	.favorite_edit--box2 .tr3-td_message { /*※タイトルを検索すると、ここに一覧表示されます。*/
+		font-size: 13px;
+		color: red;
+	}
+	.favorite_edit--box2 .tr3-td_message span {
+		white-space: nowrap;
+	}
+	.favorite_edit--box2 .tr4-td_message {/*※入力したタイトル名と一致しないか、まだそのタイトルの質問がされていません。  */
+		font-size: 13px;
+		color: red;
+	}
+/* テーブル↑................................................*/
+
+/* お気に入りタイトルを探して追加↑ -------------------------------- */
+/* ページネーション↓ ---------------------------------------------- */
+
+	.favorite_edit--pagination div.container {
+      font-size: 11px;
+      padding-left: 0;
+      padding-right: 0;
+      margin: 0 auto;
+      vertical-align: top;
+	}
+
+	.favorite_edit--pagination ul {
+		margin: 10px 0px 0px 0px; /* ここだけ他のページネーションとは値が異なる  */
+	}
+	.favorite_edit--total_number {
+		margin: 1px 0px 0px 0px; /*赤字全件数の上下を上書き調整 */
+		font-size: 11px;
+		color: white;
+	}
+/* ページネーションレスポンシブ↑.......................... */
+	/* ページネーション↑ ---------------------------------------------- */
+}
+/* favorite_editレスポンシブ↑---------------------------------------------- */
+/* favorite_edit.html お気に入り編集↑◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆ (終)*/

@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdrv.app.dao.AnswerDao">
+
+<!-- 回答を追加 -->
+	<insert id="insertAnswer" useGeneratedKeys="true" keyProperty="answerId" parameterType="com.zdrv.app.domain.Answer">
+		INSERT INTO answer (answer_id, answer_contents, answer_date, answer_question_id, answer_user_id)
+		VALUES (#{answerId}, #{answerContents}, NOW(), #{answerQuestionId}, #{answerUserId})
+		<!-- 自動採番されたIDの取得 -->
+    	<selectKey resultType="int" keyProperty="answerId" order="AFTER">
+       	 	select @@IDENTITY
+    	</selectKey>
+	</insert>
+
+<!-- answerIdを元に1つの回答を取得し、そのコメントもリストで取得 (コメント追加ページの表示で使用)-->
+ 	<resultMap id="AnswerWithCommentsMap" type="com.zdrv.app.domain.Answer" >
+		<id property="answerId" column="answer_id"/>
+		<result property="answerContents" column="answer_contents"/>
+		<result property="answerDate" column="answer_date"/>
+		<result property="answerQuestionId" column="answer_question_id"/>
+		<result property="answerUserId" column="answer_user_id"/>
+		<collection property="answerImgList" ofType="com.zdrv.app.domain.AnswerImg">
+			<id property="answerImgNo" column="answer_img_no"/>
+			<result property="answerImgName" column="answer_img_name"/>
+			<result property="answerImgAnswerId" column="answer_img_answer_id"/>
+		</collection>
+		<collection property="answerCommentList" ofType="com.zdrv.app.domain.Comment">
+			<id property="commentId" column="comment_id"/>
+			<result property="commentContents" column="comment_contents"/>
+			<result property="commentDate" column="comment_date"/>
+			<result property="commentAnswerId" column="comment_answer_id"/>
+			<result property="commentUserId" column="comment_user_id"/>
+			<result property="commentPosterType" column="comment_poster_type"/>
+			<collection property="commentImgList" ofType="com.zdrv.app.domain.CommentImg">
+					<id property="commentImgNo" column="comment_img_no"/>
+					<result property="commentImgName" column="comment_img_name"/>
+					<result property="commentImgCommentId" column="comment_img_comment_id"/>
+			</collection>
+		</collection>
+	</resultMap>
+	<select id="selectAnswerWithComments" parameterType="int" resultMap="AnswerWithCommentsMap">
+		SELECT * FROM answer
+		LEFT JOIN answer_img ON answer.answer_id = answer_img.answer_img_answer_id
+		LEFT JOIN comment ON answer.answer_id = comment.comment_answer_id
+		LEFT JOIN comment_img ON comment.comment_id = comment_img.comment_img_comment_id
+		WHERE answer.answer_id = #{answerId}
+	</select>
+
+<!--質問詳細 Aリスト+各imgリストの取得メソッド用 -->
+	<resultMap id="selectAnswerWithImgMap" type="com.zdrv.app.domain.Answer" >
+		<id property="answerId" column="answer_id"/>
+		<result property="answerContents" column="answer_contents"/>
+		<result property="answerDate" column="answer_date"/>
+		<result property="answerQuestionId" column="answer_question_id"/>
+		<result property="answerUserId" column="answer_user_id"/>
+		<collection property="answerImgList" ofType="com.zdrv.app.domain.AnswerImg">
+			<id property="answerImgNo" column="answer_img_no"/>
+			<result property="answerImgName" column="answer_img_name"/>
+			<result property="answerImgAnswerId" column="answer_img_answer_id"/>
+		</collection>
+	</resultMap>
+	<select id="selectAnswerWithImg" parameterType="int" resultMap="selectAnswerWithImgMap">
+		SELECT * FROM answer
+		LEFT JOIN answer_img ON answer.answer_id = answer_img.answer_img_answer_id
+		WHERE answer.answer_question_id = #{questionId}
+	</select>
+
+<!--画像添付-->
+	<insert id="insertAnswerImg" useGeneratedKeys="true" keyProperty="answerImgNo" parameterType="com.zdrv.app.domain.AnswerImg">
+		INSERT INTO answer_img (answer_img_no, answer_img_name, answer_img_answer_id)
+		VALUES (#{answerImgNo}, #{answerImgName}, #{answerImgAnswerId})
+	</insert>
+
+
+<!-- マイページの回答履歴用  ログイン中のユーザーID情報を元にanswerUserIdに対応させて質問をリストで取得 -->
+	<resultMap id="selectAnswerHistoryByPageMap" type="com.zdrv.app.domain.Answer" >
+		<id property="answerId" column="answer_id"/>
+		<result property="answerContents" column="answer_contents"/>
+		<result property="answerDate" column="answer_date"/>
+		<result property="answerQuestionId" column="answer_question_id"/>
+		<result property="answerUserId" column="answer_user_id"/>
+		<association property="question" resultMap="answerWithQuestionMapToQuestionMap"/>
+		<collection property="answerCommentList" ofType="com.zdrv.app.domain.Comment">
+			<id property="commentId" column="comment_id"/>
+			<result property="commentContents" column="comment_contents"/>
+			<result property="commentDate" column="comment_date"/>
+			<result property="commentAnswerId" column="comment_answer_id"/>
+			<result property="commentUserId" column="comment_user_id"/>
+			<result property="commentPosterType" column="comment_poster_type"/>
+		</collection>
+	</resultMap>
+	<resultMap id="answerWithQuestionMapToQuestionMap" type="com.zdrv.app.domain.Question" >
+		<id property="questionId" column="question_id"/>
+		<result property="bookTitle" column="book_title"/>
+		<result property="pageNumber" column="page_number"/>
+		<result property="questionTitle" column="question_title"/>
+		<result property="questionContents" column="question_contents"/>
+		<result property="questionDate" column="question_date"/>
+		<result property="questionUserId" column="question_user_id"/>
+		<result property="numberOfAnswers" column="number_of_answers"/>
+		<result property="questionStatus" column="question_status"/>
+		<result property="questionThanks" column="question_thanks"/>
+		<result property="pageViews" column="page_views"/>
+		<collection property="questionAnswerList" ofType="com.zdrv.app.domain.Answer">
+			<id property="answerId" column="answer_id"/>
+			<result property="answerContents" column="answer_contents"/>
+			<result property="answerDate" column="answer_date"/>
+			<result property="answerQuestionId" column="answer_question_id"/>
+			<result property="answerUserId" column="answer_user_id"/>
+		</collection>
+	</resultMap>
+
+	<select id="selectAnswerHistoryByPage" resultMap="selectAnswerHistoryByPageMap">
+		SELECT
+		answer.answer_id,
+		answer.answer_contents,
+		answer.answer_date,
+		answer.answer_question_id,
+		answer.answer_user_id,
+        question_id,
+        book_title,
+        page_number,
+        question_title,
+        question_contents,
+        question_date,
+        question_user_id,
+        question_status,
+        question_thanks,
+        page_views,
+        COUNT(answer2.answer_question_id) AS number_of_answers
+		FROM answer
+		JOIN question ON answer.answer_question_id = question.question_id
+        LEFT JOIN answer AS answer2 ON question.question_id = answer2.answer_question_id
+		WHERE answer.answer_user_id = #{answerUserId}
+        GROUP BY answer.answer_id
+		ORDER BY answer_date DESC
+		LIMIT #{offset}, #{num}
+	</select>
+
+
+<!-- 回答履歴の全件数を取得 (回答履歴のトータルページ数を出すメソッド内で使用)-->
+	<select id="countAnswerHistory" resultType="long">
+		SELECT COUNT(*) FROM answer
+		WHERE answer_user_id = #{answerUserId}
+	</select>
+
+<!-- 回答履歴の全タイトルを取得 (回答履歴のトータル件数を出すメソッド内で使用)-->
+	<select id="selectAllAnswerHistory" resultType="com.zdrv.app.domain.Answer">
+		SELECT * FROM answer
+		WHERE answer_user_id = #{answerUserId}
+	</select>
+
+
+<!-- ◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆◆-->
+</mapper>

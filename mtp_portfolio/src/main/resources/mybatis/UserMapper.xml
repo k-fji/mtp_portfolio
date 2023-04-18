@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdrv.app.dao.UserDao">
+
+<!-- userテーブルのuser_idカラムから、入力された #{userId}に対応したuser_idを取得 -->
+	<select id="selectByUserId" resultType="com.zdrv.app.domain.User" parameterType="string">
+		SELECT * FROM user
+		WHERE user_id = #{userId}
+	</select>
+
+<!-- 新規ユーザー登録情報を追加 -->
+	<insert id="insertUser" useGeneratedKeys="true" keyProperty="id" parameterType="com.zdrv.app.domain.User">
+		INSERT INTO user (user_id, pass)
+		VALUES (#{userId}, #{pass})
+	</insert>
+</mapper>

@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdrv.app.dao.CommentDao">
+
+<!-- コメントを追加 -->
+	<insert id="insertComment" useGeneratedKeys="true" keyProperty="commentId" parameterType="com.zdrv.app.domain.Comment">
+		INSERT INTO comment (comment_id, comment_contents, comment_date, comment_answer_id, comment_user_id, comment_poster_type)
+		VALUES (#{commentId}, #{commentContents}, NOW(), #{commentAnswerId}, #{commentUserId}, #{commentPosterType})
+		<!-- 自動採番されたIDの取得 -->
+    	<selectKey resultType="int" keyProperty="commentId" order="AFTER">
+       	 	select @@IDENTITY
+    	</selectKey>
+	</insert>
+
+
+<!--質問詳細-->
+
+	<resultMap id="selectCommentWithImgMap" type="com.zdrv.app.domain.Comment" >
+		<id property="commentId" column="comment_id"/>
+		<result property="commentContents" column="comment_contents"/>
+		<result property="commentDate" column="comment_date"/>
+		<result property="commentAnswerId" column="comment_answer_id"/>
+		<result property="commentUserId" column="comment_user_id"/>
+		<result property="commentPosterType" column="comment_poster_type"/>
+		<collection property="commentImgList" ofType="com.zdrv.app.domain.CommentImg">
+			<id property="commentImgNo" column="comment_img_no"/>
+			<result property="commentImgName" column="comment_img_name"/>
+			<result property="commentImgCommentId" column="comment_img_comment_id"/>
+		</collection>
+	</resultMap>
+	<select id="selectCommentWithImg" parameterType="int" resultMap="selectCommentWithImgMap">
+		SELECT * FROM comment
+		LEFT JOIN comment_img ON comment.comment_id = comment_img.comment_img_comment_id
+		WHERE comment.comment_answer_id = #{answerId}
+	</select>
+
+
+<!--画像添付-->
+	<insert id="insertCommentImg" useGeneratedKeys="true" keyProperty="commentImgNo" parameterType="com.zdrv.app.domain.CommentImg">
+		INSERT INTO comment_img (comment_img_no, comment_img_name, comment_img_comment_id)
+		VALUES (#{commentImgNo}, #{commentImgName}, #{commentImgCommentId})
+	</insert>
+
+</mapper>

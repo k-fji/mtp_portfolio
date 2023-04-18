@@ -1,0 +1,140 @@
+<!doctype html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>質問投稿画面</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="add--body body_color_white">
+
+<header class="header_bottomLine_black">
+	<nav class="pc-nav">
+		<p class="to_home"><a th:href="@{/home}">homeへ</a></p>
+		<p class="pc-previous_page"><a href="#" onclick="window.history.back(); return false;">前のページへ戻る</a></p>
+		<p class="show_userId" th:if="${loginUserId != 'anonymousUser'}" >
+			 <a th:href="@{/mypage}">
+		        <span class="show_userId-span_Top" th:text="${loginUserId} + 'でログイン中'"></span>
+		        <span class="show_userId-span_Bottom">マイページTOPへ</span>
+		     </a>
+		</p>
+	</nav>
+
+	<div class="sp-userId_and_hamburger">
+		<div>
+		    <span class="sp-show_userId" th:if="${loginUserId != 'anonymousUser'}" th:text="${loginUserId} + 'でログイン中'"></span>
+		    <span class="sp-no_login" th:if="${loginUserId == 'anonymousUser'}" th:text="[未ログイン]"></span>
+		</div>
+
+		<div id="hamburger">
+	      <span></span>
+	    </div>
+	</div>
+
+    <div class="sp-nav_wrapper">
+		<nav class="sp-nav_bg"></nav>
+
+		<nav class="sp-nav">
+		    <div class="round_btn close_btn"></div>
+
+		    <ul>
+
+		      <li class="previous_page"><a href="#" onclick="window.history.back(); return false;">＜＜ 前のページへ戻る</a></li>
+
+		      <li><a th:if="${loginUserId != 'anonymousUser'}" th:href="@{/mypage}">マイページTOPへ</a></li>
+
+		 	  <li class="to_home"><a th:href="@{/home}">homeへ</a></li>
+
+		      <li><a th:href="@{/questions/book_title_list}">全教材タイトル一覧</a></li>
+
+		      <li><a th:href="@{/questions/list}">全Q＆A一覧</a></li>
+
+		      <li><a th:if="${loginUserId == 'anonymousUser'}" th:href="@{/login}">ログイン</a></li>
+
+		      <li><a th:if="${loginUserId != 'anonymousUser'}" th:href="@{/logout}">ログアウト</a></li>
+		    </ul>
+	    </nav>
+     </div>
+</header>
+
+<main class="center">
+	<h1 class="add--title">質問投稿</h1>
+	<div class="questionFormArea">
+		<form class=add--form action="" method="Post" th:object="${question}" enctype="multipart/form-data">
+		   <span class="error" th:errors="*{bookTitle}"></span>
+		   <p class="add--book_title">教材名:<br class="sp_br">
+		   <input type="text" placeholder="30字以内" th:field="*{bookTitle}">
+		   </p>
+
+		   <span class="error" th:errors="*{pageNumber}"></span>
+
+		   <div class="add--page_number">
+		   	  <div>
+		   		<p>ページ番号/動画時間:<br class="sp_br">
+		   		<input type="text" placeholder="数字のみ(半角)" th:field="*{pageNumber}">
+				</p>
+		   	  </div>
+		      <div>
+		   		<span>※学習全般の悩み等、教材の内容以外の質問は「0」と入力してください。</span><br />
+		   		<span>※動画教材の場合は再生時間が1:30の場合は「130」と入力してください。</span>
+		   	  </div>
+		   </div>
+		   <br class="sp_br"><!--error表示改行用  -->
+
+		   <span class="error" th:errors="*{questionTitle}"></span>
+		   <p class="add--question_title">質問タイトル:
+		       <input type="text" placeholder="30字以内        (例：問1の○○について)" th:field="*{questionTitle}">
+		   </p>
+
+		   <span class="error" th:errors="*{questionContents}"></span>
+		   <p class="add--question_contents">質問内容:<br class="sp_br">
+		       <textarea cols="80" rows="10" placeholder="質問内容を記入してください。(500字以内)&#13;※画像や本文の引用を行う際は下記の注意書きの項目をチェックしましょう。" th:field="*{questionContents}"></textarea>
+		   </p>
+		   <div class="quote_caution">
+			   <div>
+				   <p>＜引用時の注意点＞<br />
+				   引用とは他者の著作物の文章や画像をのせる事です。<br />
+				   下記のルールを守らずに引用すると著作権の侵害になる場合があります。<br />
+				   引用が不安な場合は、引用を行わずに質問を作りましょう。<br />
+				    ●引用部分は、質問や説明をするのに使う必要最低限の部分以外はのせてはいけません。<br />
+				    ●引用部分に修正を加えてはいけません。<br />
+				    ●本文の引用は、どこが引用部分なのかカッコ等で囲んで分かりやすくする必要があります。<br />
+				    ●書籍からの引用の場合は、書籍の名称、著者名を明記する必要があります。<br />コピー&amp;ペースト用▶▶<br class="sp_br">（引用部分「」、引用元『』、著者名： ）<br class="sp_br">（下記引用画像、引用元『』、著者名： ）<br />
+					●Webサイトからの引用の場合は、Webサイト名とURLを明記する必要があります。<br />コピー&amp;ペースト用▶▶<br class="sp_br">（引用部分「」、Webサイト名『』、URL： ）<br class="sp_br">（下記引用画像、Webサイト名『』、URL： ）<br />
+
+				   </p>
+			   </div>
+		   </div>
+
+		   <p class="image_attached">画像添付:
+		       <input type="file" th:field="*{multipartFile}" multiple>
+		   </p>
+		   <br />
+
+		   <p class="add--calling">※投稿した質問が自力で解決できた時は、<br />セルフ回答ボタンを使ってヒントを共有してあげましょう！<br />ー誰かの悩みは誰かのヒントー</p>
+
+		   <p class="add--cancel_and_submit">
+			   <a href="#" onclick="window.history.back(); return false;">キャンセルする</a>
+			   <input type="submit" th:field="*{questionDate}">
+		   </p>
+		</form>
+	</div>
+</main>
+<!-- bootstrap -->
+<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+<script>
+$(function() {
+   const hum = $('#hamburger, .close_btn')
+   const nav = $('.sp-nav')
+   hum.on('click', function(){
+      nav.toggleClass('toggle');
+      $('.sp-nav_bg').stop().fadeToggle(350);
+   });
+});
+</script>
+</body>
+</html>

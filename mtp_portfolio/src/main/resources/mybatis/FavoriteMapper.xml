@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zdrv.app.dao.FavoriteDao">
+
+<!-- favoriteテーブルの全カラムのデータを取得 -->
+	<select id="selectAll" resultType="com.zdrv.app.domain.Favorite">
+		SELECT * FROM favorite
+		ORDER BY favorite_title
+	</select>
+
+<!-- IDに該当するfavoriteテーブルの全カラムのデータをリストで取得 -->
+	<select id="selectByUserId" parameterType="string" resultType="com.zdrv.app.domain.Favorite">
+		SELECT * FROM favorite
+		WHERE favorite_user_id = #{favoriteUserId}
+	</select>
+
+
+<!-- お気に入り教材を追加 -->
+	<insert id="insert" useGeneratedKeys="true" keyProperty="favoriteId" parameterType="com.zdrv.app.domain.Favorite">
+		INSERT INTO favorite (favorite_id, favorite_user_id, favorite_title)
+		VALUES (#{favoriteId}, #{favoriteUserId}, #{favoriteTitle})
+	</insert>
+
+<!-- お気に入り教材を削除 -->
+	<delete id="delete" parameterType="int" >
+	DELETE FROM favorite
+	WHERE favorite_id = #{favoriteId}
+	</delete>
+
+</mapper>

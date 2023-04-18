@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="ja" xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width,initial-scale=1">
+	<title>Portfolio</title>
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body class="portfolio--body body_color_white footerFixed">
+
+<header class="header_bottomLine_black header_fixed">
+	<nav class="pc-nav">
+		<p class="to_home"><a th:href="@{/home}">▶▶アプリhomeへ</a></p>
+	</nav>
+
+	<div class="sp-userId_and_hamburger">
+
+
+		<div id="hamburger">
+	      <span></span>
+	    </div>
+	</div>
+
+    <div class="sp-nav_wrapper">
+		<nav class="sp-nav_bg"></nav>
+
+		<nav class="sp-nav">
+		    <div class="round_btn close_btn"></div>
+
+		    <ul>
+		 	  <li class="to_home"><a th:href="@{/home}">アプリhomeへ</a></li>
+		 	  <li class="portfolio_sidemenu_anotation">※home画面メニューの</li>
+			  <li class="portfolio_sidemenu_anotation">「Portfolio」から</li>
+			  <li class="portfolio_sidemenu_anotation">こちらへ戻れます。</li>
+		    </ul>
+	    </nav>
+     </div>
+</header>
+
+<main>
+<div class="container">
+	<h1 class="portfolio_title">ーPortfolioー</h1>
+
+	<div class="row">
+		<div class="profile_wrapper col-md-3">
+			<div>
+				<img class="profile_img img-thumbnail" th:src="@{/images/profile_img01.jpeg}"></img>
+			</div>
+
+			<div class="profile_contents">
+				<div class="portfolio_contents_title">Profile</div>
+				<div>名前：藤井 健人 (フジイ ケント)</div>
+				<div>生年月日：1982年5月15日</div>
+				<div>年齢：40歳</div>
+				<div>メール：kento.fji@gmail.com</div>
+
+				<div>　前職はカラオケ店の店長として店舗運営に携わり、計13年間勤務致しました。</div>
+				<div>　企画から制作段階まで自ら行うモノ作りが好きで、ドリンク・フードのメニューの開発からメニューPOPやチラシの制作、インテリア等の空間作りを通して、そこに触れる人の感情デザインをする事を得意としております。</div>
+				<div>(デザインツールはAdobe Illustratorを使用。)</div>
+				<div>　業界未経験ですが、新たにIT技術を使ったモノ作りを通して、人の心をプラスに感情デザインする事を志しております。</div>
+				<br />
+				<div class="profile_More_wrapper">
+					<div class="bold">※More</div>
+					<div>⦿<a th:href="@{/portfolio_works}">企画・デザイン紹介リンク</a></div>
+					<div>⦿SNS：  <a href="https://www.instagram.com/manga_kento_fujii">instagram</a> , <a href="https://twitter.com/M_kento_fujii">twitter</a></div>
+			    </div>
+			</div>
+		</div>
+
+
+		<div class="contents_wrapper col-md-9">
+			<div class="contents1">
+				<div class="portfolio_contents_title">サイトの概要・使用技術</div>
+
+				<div>サイト名：Mt.Practice (マウントプラクティス)</div>
+				<div>サイト概要：同じ教材を持っている人同士をつなげる教材に特化したQ&amp;Aサイト</div>
+				<div>サイトURL：  <a th:href="@{/home}">https://mt-practice.com</a></div>
+				<div>使用言語：Java</div>
+				<div>フレームワーク：Spring Boot, mybatis</div>
+				<div>フロントエンド： HTML/CSS, JavaScript, jQuery, Bootstrap, thymeleaf</div>
+				<div>バックエンド：AWS(EC2, RDS, S3), MySQL(ver8.0.28), Apache HTTP Server, Apache Tomcat</div>
+				<div>環境・使用ツール：Windows(local), Linux2(remote/Ec2), Eclipse, GitHub</div>
+				<div>作成期間：2年 (構想段階含む)</div>
+				<div>使用技術選定理由：自分の持ち得る技術を最大限に発揮しようと考えたため。</div>
+				<div>※実務未経験のため当サイトの使用技術が保持スキルと同等となりますが、オンライン教材を使用したKotlin、PHPの基本文法の学習経験もございます。</div>
+			</div>
+
+
+			<div class="contents2">
+				<div class="portfolio_contents_title">なぜこのサイトを企画したのか</div>
+
+				<div>　私自身の職業訓練校(Javaプログラミング)での学習過程で、授業についていけずに悩んだ挫折経験が元になっています。
+				分からない時にはQ&amp;AサイトやGoogle検索がとても役に立ちますが、欲しいヒントを見つけ出し、自分の状況に置き換える作業にいつも多くの労力や時間がかかってしまい、目標の量がこなせなくなるという悩みを持っていました。</div>
+				<div>　そんな時にふと、「教材のタイトルごとに分けられたQ&amp;Aサイトがあったら助かるのにな」と思ったことをきっかけに、自分のためだけでなく同じ悩みを抱える学習者のためにも作る意義を感じたためです。</div>
+			</div>
+
+			<div class="contents3">
+				<div class="portfolio_contents_title">サイトの目的</div>
+
+				<div>　意欲的に学習に取り組んでいても、「目標の課題の量がこなせない」「量はこなせていても理解が追い付かない」という悩みを抱える学習者をサポートすること。</div>
+			</div>
+
+			<div class="contents3">
+				<div class="portfolio_contents_title">このサイトが解決できること・期待できる効果</div>
+			</div>
+
+				<div class="bold">＜悩みを抱えるユーザー(メインターゲット)＞</div>
+				<div class="bold red">・より多くの仲間に向けて質問ができ、自分の理解に必要な回答が得やすくなる。</div>
+				<div>→質問をできる仲間が自分の所属組織や所属範囲の垣根を超えて広がるため。</div>
+				<div>→各組織ごとや教材ごとのQ&amp;Aシステムでは管理者対ユーザーの縦のやり取りが主体だが、
+				第三機関が作るQ&amp;Aシステムであることによって気兼ねなくユーザー同士の横のやり取りができるようになるため。</div>
+				<div>→回答をもらえる量やスピードだけでなく、自分と同じレベルの人からのアドバイスも期待できることで、分かりやすさという回答の質にもつながるため。</div>
+				<br />
+				<div class="bold red">・必要なヒントを検索する時に、絞り込み作業にかかる労力や時間を大幅に削減できる。</div>
+				<div>→同じ教材を使っている者同士であれば、同じ疑問を持ち、同じヒントを探している確率も高く、
+				個々に同じヒントを探す手間を1つのサイトに集約する事で探す手間を減らせるため。</div>
+
+				<br />
+				<div class="bold red">・従来のQ&amp;Aサイトより質問時の状況説明を簡単に行うことができる。</div>
+				<div>→同じ教材を使っている人同士がつながることで問題文等の説明の省略ができるため。</div>
+				<br />
+				<div class="bold red">・同じ教材を使っている人同士で、学習方法等の相談もする事ができる。</div>
+				<div>→質問投稿時のページ入力欄で、ページ番号「0」を特定のページ以外の相談用にするという共通ルールにより対応できるようにしたため。</div>
+				<br />
+				<div class="bold red">・自信を失うことに繋がるネガティブ要因を抑制し、安心して質問できる。</div>
+				<div>→やりとりの際の言葉遣いや「否定をしない」というサイト独自のルールを設けているため。</div>
+
+				<div class="contents_img_div">
+					<div class="bold">※イメージ図 (全国で市販されている教材の場合)</div>
+					<img class="porfolio_img img-fluid" th:src="@{/images/mtp_portfolio_img.png}"></img>
+				</div>
+
+				<br />
+				<div class="bold">＜悩みを抱えていないユーザー(サブターゲット)＞</div>
+				<div>・教える側も教える事で復習となり理解がより深まる。</div>
+				<div>・情報が集約化されているため、スムーズに参考情報を集められるツールとして使える。</div>
+				<div>・サイト内で教える程自分の勉強のしやすい環境を生む。</div>
+				<div>→サイト利用者の増加につながり、今後別の教材で学習する時の「自分が質問できる相手」や「参照できるＱ＆Ａ履歴数」の増加に繋がるため。</div>
+
+			<div class="contents_img_div">
+				<div class="bold">＜出版社・版元(サブターゲット)＞</div>
+				<div>・サイトのQ&amp;A履歴やデータからユーザーの生の声に寄り添った改版が行え、より良い教材作りに役立てられる。</div>
+				<div>・エンドユーザーとのコネクションツールとしても利用できる。</div>
+				<div>・教材に「安心」「便利」といった付加価値を付けることができる。</div>
+				<div>・販促物として売上アップに繋げられる。</div>
+				<div>・教育業界全体で取り組めば、教育市場規模の拡大が見込める。</div>
+				<div>→「できる、分かる人」が増えれば学習に積極的になる人も増え、1人あたりの学習機会の増加につながるため。</div>
+				<br />
+				<div>※販促物として本の帯の運用例</div>
+				<div>(QRコードは実際に読み込み可能です)</div>
+
+				<img class="QR_img img-fluid" th:src="@{/images/QR_image.png}"></img>
+			</div>
+
+
+
+			<div class="contents4">
+				<div class="portfolio_contents_title">工夫した点</div>
+
+				<div>＜UIデザイン＞</div>
+				<div>　スマートフォン環境による学習環境が多い事を想定して、ユーザー目線で実機で何度もチェックを行いながらレスポンシブ対応を行いました。</div>
+			    <div>　またQ&amp;A一覧では質問者が回答をもらいやすくなる工夫として、回答の有無や解決の有無を一目で判別できるような配色デザインにしました。</div>
+				<div>　サイトのロゴやタイトルは「同じ教材の山を助け合って登る」というコンセプトの価値提案を意識してデザインしました。</div>
+
+				<br />
+				<div>＜サイト独自のアイデア＞</div>
+				<div>　「セルフ回答ボタン」を作ることで、分からない学習者が参照できるヒントを1つでも多くするための工夫を行いました。</div>
+				<div>　学習方法の悩み相談等にも対応し、質問投稿時のページ入力欄に0を入れるだけで、他の質問と区別しながらも簡単に行える仕組みを作りました。</div>
+				<div>　また、悩みを抱える学習者の多くは自信を欠いている状態のため、やりとり時のルールを制定することで安心して質問できる環境作りの工夫も行いました。</div>
+			</div>
+
+			<div class="contents4">
+				<div class="portfolio_contents_title">苦労した点</div>
+				<div>　教材を手本に作り上げたサーバーがウィルスの感染を受けてしまい、作り直しになってしまったことです。
+				基礎知識や予備知識があれば対処出来ていたことでしたが、この経験の場面こそ自ら作るWebサイトが役に立てる場面であると、制作意義を再認識することができました。</div>
+
+			</div>
+
+			<div class="contents4">
+				<div class="portfolio_contents_title">今後の課題</div>
+				<div>　現段階ではパブリックな市販の教材向けの仕様になっておりますが、プライベートな社内研修用教材や学習塾専用教材、
+				他にもサイトやブログを教材に見立てた需要も考えられます。こういった様々な需要に対応できるように。予めシステム設計を準備しておくことが今後の課題であると考えております。
+				</div>
+			</div>
+			<div class="contents3">
+				<div class="portfolio_contents_title">目指す状態</div>
+
+				<div>このサイトが悩みを抱える学習者にとって心強いサポートサイトになっており、</div>
+				<div>世の中に「同じ教材を持っている人同士がネット上でつながり、助け合う」というカルチャーが浸透している状態。</div>
+			</div>
+		</div>
+	</div>
+</div>
+</main>
+
+<footer class="footer">Portfolio by Kento Fujii</footer>
+
+<!-- bootstrap -->
+<script th:src="@{/js/jquery-3.6.0.min.js}"></script>
+<script th:src="@{/js/bootstrap.bundle.min.js}"></script>
+
+<script>
+$(function() {
+   const hum = $('#hamburger, .close_btn')
+   const nav = $('.sp-nav')
+   hum.on('click', function(){
+      nav.toggleClass('toggle');
+      $('.sp-nav_bg').stop().fadeToggle(350);
+   });
+});
+</script>
+</body>
+</html>
